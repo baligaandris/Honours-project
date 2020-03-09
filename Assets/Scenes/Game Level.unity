@@ -877,13 +877,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceText:
-  - {fileID: 4900000, guid: 2f3761a1c6e5ee04cbe2585eb9846592, type: 3}
+  - {fileID: 4900000, guid: dc461d7fbf49b39489501650575ac72f, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 446907293}
   dialogueUI: {fileID: 446907294}
-  startNode: Wolf encounter
+  startNode: Start
   startAutomatically: 1
   automaticCommands: 1
 --- !u!4 &446907291
@@ -912,7 +912,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVariables: []
+  defaultVariables:
+  - name: doneBandits
+    value: False
+    type: 2
+  - name: doneMonsters
+    value: False
+    type: 2
+  - name: doneEnemy
+    value: False
+    type: 2
+  - name: doneGuards
+    value: False
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &446907294
 MonoBehaviour:
