@@ -1,0 +1,26 @@
+title: Scene1
+tags: 
+colorID: 0
+position: 353,192
+---
+As the sun approaches the horizon you decide to set up camp one more time before approaching the bandit-controlled valley. You signal to your companion to approach the roadside clearing nearby and direct your horse similarly. 
+
+You dismount and tie the lead to low branch. While setting up the campsite you and your companion discuss the plan for tomorrow.
+
+[[ Leave the horses and sneak into the valley. | Stealth ]] 
+[[ Ride in on horseback, Out in the open. | Ride ]] 
+===
+title: Stealth
+tags: 
+colorID: 0
+position: 192,468
+---
+You sneak in.
+===
+title: Ride
+tags: 
+colorID: 0
+position: 478,474
+---
+You ride in.
+===

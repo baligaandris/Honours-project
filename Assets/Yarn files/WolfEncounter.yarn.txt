@@ -1,0 +1,27 @@
+title: Wolf encounter
+tags: 
+colorID: 0
+position: 408,97
+---
+A wolf appears in front of you.
+<<CreateCombat CombatHandler>>
+
+[[ Fight it | fight ]]
+[[ Feed it with your ration pack | feed ]] 
+===
+title: fight
+tags: 
+colorID: 0
+position: 250,390
+---
+<<ResolveCombat CombatHandler>>
+You fight the wolf toe-to-toe.
+===
+title: feed
+tags: 
+colorID: 0
+position: 507,390
+---
+<<SkipCombat CombatHandler 2 4>>
+The the wolf eats the food, then leaves in peace.
+===

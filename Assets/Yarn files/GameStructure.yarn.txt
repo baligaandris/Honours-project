@@ -1,0 +1,224 @@
+title: Start
+tags: 
+colorID: 0
+position: -7525,-2622
+---
+It's raining, and you arrive back in your home valley after a long war. At your side rides your best friend and comrade form the front lines.
+It's raining like hell, and there is still a ways to go, so you set up camp.
+In the camp you have a chance to talk to your friend, to establish backgrounds
+Some wolves attack, You fight them. Go to sleep.
+
+
+[[ The next morning... | Back on the Road ]] 
+===
+title: Back on the Road
+tags: 
+colorID: 0
+position: -7524,-2357
+---
+You pack up camp and continue on your way.
+
+A traveling merchant comes moving the opposite direction.
+
+[[ Rob him | Robbing the merchant ]] 
+[[ Don't have the money, just move on. | Moving on. ]]
+===
+title: Robbing the merchant
+tags: 
+colorID: 0
+position: -7528,-2103
+---
+You rob him, get some HP back.
+
+[[ Arrive in the village | The village entry ]] 
+===
+title: Moving on.
+tags: 
+colorID: 0
+position: -7265,-2098
+---
+You get nothing, just keep going.
+
+[[ Arrive in the village | The village entry ]] 
+===
+title: The village entry
+tags: 
+colorID: 0
+position: -6596,-2638
+---
+The village is different than you remember. Things are in worse condition, people seem downtrodden and weak.
+There is an explosion of movement out of a nearby store with a group of armed and armored town guards dragging out crates full of goods.
+
+[[ Intervene | Oppose guards ]] 
+[[ Keep a low profile | Let the guards do their thing ]] 
+===
+title: Oppose guards
+tags: 
+colorID: 0
+position: -6580,-2386
+---
+You call out the guards, it turns into a fight.
+
+You clash, but everyone survives. They grumbles threats under their breaths as they leave.
+
+[[ Go to village center | Head home ]] 
+===
+title: Let the guards do their thing
+tags: 
+colorID: 0
+position: -6292,-2386
+---
+You keep your head down, and watch as the guards take the goods away.
+
+You head to the center of town.
+
+[[ Go to village center | Head home ]] 
+===
+title: Head home
+tags: 
+colorID: 0
+position: -6580,-2098
+---
+You can see the street your home is on.
+You and your friend decide to split up, and each of you can go home.
+
+At home you have a conversation with your family who tell you about the monsters, bandits, and enemy forces in the area, and how the lord controls the town with an iron fist.
+
+You decide to deal with the problems in the town,
+
+[[ Head to town center | Mission hub ]] 
+
+===
+title: Bandits investigation
+tags: 
+colorID: 0
+position: -5988,-2106
+---
+Your friend advises you to ask about the bandits in the local tavern.
+You go in and some locals recognize you. They comment on how you have aged, and then you get down to business. They tell you that they attack travelers on the road towards X City.
+
+[[ Go and be the bait | Baiting bandits ]] 
+===
+title: Monsters investigation
+tags: 
+colorID: 0
+position: -5214,-2105
+---
+Empty Text
+===
+title: Enemy Unit investigation
+tags: 
+colorID: 0
+position: -4962,-2101
+---
+Empty Text
+===
+title: Town Guard investigation
+tags: 
+colorID: 0
+position: -4704,-2099
+---
+Empty Text
+===
+title: Blacksmith
+tags: 
+colorID: 0
+position: -4455,-2097
+---
+Empty Text
+===
+title: Healer
+tags: 
+colorID: 0
+position: -4194,-2088
+---
+Empty Text
+===
+title: Baiting bandits
+tags: 
+colorID: 0
+position: -6471,-1790
+---
+You and your friend ride down that road and indeed bandits ambush you. They jump out of the roadside shrubbery, brandish weapons, and demand money. As you two also draw your weapons you notice one of the bandits is an childhood friend of yours.
+
+[[ Fight | Fight bandits ]]
+[[ Talk to old friend | Talk to bandit friend ]] 
+[[ Preach at them | Preach at bandits ]] 
+===
+title: Fight bandits
+tags: 
+colorID: 0
+position: -7605,-1515
+---
+You kill them, and collect their weapons as proof that they are dead.
+Your fried challenges your decision.
+
+[[ They deserved what they got | If you say so ]]
+[[ I had to protect the innocents they keep attacking | If you say so ]]
+[[ The law must be upheld | If you say so ]] 
+[[ It gets us the payday | If you say so ]] 
+===
+title: Talk to bandit friend
+tags: 
+colorID: 0
+position: -5963,-1569
+---
+Empty Text
+===
+title: Preach at bandits
+tags: 
+colorID: 0
+position: -6480,-1533
+---
+You attempt to awaken empathy in the bandits with a speech. They aren't very receptive but they give context as to why they do what they do.
+
+[[ Fight | Fight bandits]]
+[[ Propose they start a new life | New life proposal]]
+[[ "No excuses" | No excuses ]] 
+===
+title: If you say so
+tags: 
+colorID: 0
+position: -7602,-1235
+---
+Your friend half heartedly accepts your argument.
+
+[[ Back to the town | ]] 
+===
+title: Mission hub
+tags: 
+colorID: 0
+position: -5658,-2627
+---
+[[ Investigate the issue of the Bandits | Bandits investigation ]] 
+[[ Investigate the issue of the Monsters | Monsters investigation ]] 
+[[ Investigate the issue of the Enemy units | Enemy Unit investigation ]] 
+[[ Investigate the issue of the Town guards | Town Guard investigation]] 
+[[ Visit the blacksmith | Blacksmith ]] 
+[[ Visit the healer | Healer ]]
+===
+title: New life proposal
+tags: 
+colorID: 0
+position: -6767,-1265
+---
+Tell them to leave and start a new life elsewhere. They must stop doing crime, but they don't have to get punished.
+They tell you that they have no money and won't be able to start a new life.
+
+[[ Then die | Fight bandits ]] 
+[[ Offer to give them the bounty on their heads | Bounty for the hunted ]]
+===
+title: No excuses
+tags: 
+colorID: 0
+position: -6432,-1274
+---
+Empty Text
+===
+title: Bounty for the hunted
+tags: 
+colorID: 0
+position: -6789,-970
+---
+Empty Text
+===

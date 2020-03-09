@@ -1,0 +1,130 @@
+title: Start
+tags: 
+colorID: 0
+position: -865,-237
+---
+Hello!
+I am an example Yarn script.
+You can enter dialogue in here to show it and make characters talk!
+<b><i>You can also do some cool formatting!</i></b>
+<color="yellow">And you can also make things colourful too!</color>
+There's a wide variety of things you can do with Yarn!
+For example, not everything here has to be static...
+<<setsprite CharacterSprite angry>>You can change the sprites of characters!
+<<setsprite CharacterSprite blaming>>You just have to use Yarn commands in your text!
+<<setsprite CharacterSprite smile>>You can also change backgrounds too!
+<<setsprite Background room1>>See, I'm now in a bedroom!
+<<setsprite Background daystreet1>>And now I'm outside...
+<<setsprite Background glasgowstreet1>>Oh... now I'm somewhere else!
+<<setsprite Background lab>><<setsprite CharacterSprite wave>>...and now I'm back in the lab!
+These are all done using simple Yarn commands!
+You can do a bunch of other things with Yarn commands!
+For example...
+<<changename CharacterName Doug>>
+My name is Doug! You might have noticed the name tag changed!
+This is all changed by calling a simple function using Yarn.
+<<changename CharacterName Bobbie>>But... actually... my name is Bobbie!
+You can open up this dialogue file later to see how it works!
+So, another feature with Yarn is that you can also respond to me!
+->Really?
+->Can I?
+You can also branch to different things based on how you respond!
+->What's your favourite colour?
+	Hmm... that would probably be red...
+	I really like that colour!
+	Do you like it too?
+	-> Yes!
+		Oh, I'm glad we both like it!
+	-> No...
+		Oh, that's okay then...
+->What's your favourite number?
+	Hmm... that would be 4912
+	No particular reason.
+	It's just a cool number!
+But anyway, thanks for asking!
+[[OptionsMenu]]
+
+===
+title: OptionsMenu
+tags: 
+colorID: 0
+position: -591,-236
+---
+So, what else do you want to learn about?
+[[Setting variables|SettingVariables]]
+[[If statements|IfStatements]]
+[[I don't need to see anything else|End]]
+
+===
+title: SettingVariables
+tags: 
+colorID: 0
+position: -311,16
+---
+Okay, let's talk about setting variables!
+You can easily set variables using Yarn (just like Twine)
+Let's try one out...
+I have a question for you!
+Cats or dogs?
+-> Cats
+	<<set $preferred_animal to "cats">>
+	Hmm... interesting choice...
+-> Dogs
+	<<set $preferred_animal to "dogs">>
+	Good choice!
+What number do you like the most?
+-> 2
+	<<set $preferred_number to 2>>
+-> 20
+	<<set $preferred_number to 20>>
+-> 200
+	<<set $preferred_number to 200>>
+That's a good number!
+Okay, so... you prefer [$preferred_animal]
+And the number you chose was [$preferred_number]
+Therefore... I am going to give you [$preferred_number] [$preferred_animal]!
+I hope you'll like that!
+I was able to do all of this using Yarn variables to save your choices and then present them back to you.
+You can also set up default variable values too!
+For example, there is a variable set up with an initial default value of [$examplevariablenumber]!
+Of course, this won't make much sense simply in this dialogue, so check out the Basic Variable Storage component to see where I got it from.
+There's a whole range of things you can do with variables - use them to your advantage!
+[[OptionsMenu]]
+
+===
+title: IfStatements
+tags: 
+colorID: 0
+position: -314,-237
+---
+Let's test out if statements!
+Okay, I have a key for a door. Do you want to take it?
+-> Yes
+	<<set $has_key to true>>
+-> No
+	<<set $has_key to false>>
+Okay!
+So now... you see a door...
+-> Use Key
+	<<if $has_key is true>>
+		You had a key so you were able to unlock the door!
+		If you didn't have the key, you wouldn't be able to open it.
+		You can ask me about if statements again if you want to try the other option!
+	<<else>>
+		You don't have a key so you cannot unlock the door...
+		Try asking me about if statements again, and take the key next time!
+	<<endif>>
+[[OptionsMenu]]
+
+===
+
+title: End
+tags: 
+colorID: 0
+position: -311,16
+---
+Oh, well I hope you understand Yarn enough to get started!
+Feel free to open up this file to see how it works.
+There's also a bunch of documentation and other examples too.
+Spend time messing about with Yarn before starting your main work!
+Have fun and good luck!
