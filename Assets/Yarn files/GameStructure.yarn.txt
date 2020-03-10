@@ -1,352 +1,550 @@
-[
-	{
-		"title": "Start",
-		"tags": "",
-		"body": "It's raining, and you arrive back in your home valley after a long war. At your side rides your best friend and comrade form the front lines.\nIt's raining like hell, and there is still a ways to go, so you set up camp.\nIn the camp you have a chance to talk to your friend, to establish backgrounds\nSome wolves attack, You fight them. Go to sleep.\n\n\n[[ The next morning | BackOnTheRoad ]] ",
-		"position": {
-			"x": -1679,
-			"y": -1877
-		},
-		"colorID": 0
-	},
-	{
-		"title": "BackOnTheRoad",
-		"tags": "",
-		"body": "You pack up camp and continue on your way.\n\nA traveling merchant comes moving the opposite direction.\n\n[[ Rob him | RobbingTheMerchant ]] \n[[ Don't have the money, just move on. | MovingOn ]]\n",
-		"position": {
-			"x": -1678,
-			"y": -1612
-		},
-		"colorID": 0
-	},
-	{
-		"title": "RobbingTheMerchant",
-		"tags": "",
-		"body": "You rob him, get some HP back.\n\n[[ Arrive in the village | TheVillageEntry ]] \n",
-		"position": {
-			"x": -1682,
-			"y": -1360
-		},
-		"colorID": 0
-	},
-	{
-		"title": "MovingOn",
-		"tags": "",
-		"body": "You get nothing, just keep going.\n\n[[ Arrive in the village | TheVillageEntry]] \n",
-		"position": {
-			"x": -1419,
-			"y": -1353
-		},
-		"colorID": 0
-	},
-	{
-		"title": "TheVillageEntry",
-		"tags": "",
-		"body": "The village is different than you remember. Things are in worse condition, people seem downtrodden and weak.\nThere is an explosion of movement out of a nearby store with a group of armed and armored town guards dragging out crates full of goods.\n\n[[ Intervene | OpposeGuards ]] \n[[ Keep a low profile | LetTheGuardsDoTheirThing ]] \n",
-		"position": {
-			"x": -750,
-			"y": -1893
-		},
-		"colorID": 0
-	},
-	{
-		"title": "OpposeGuards",
-		"tags": "",
-		"body": "You call out the guards, it turns into a fight.\n\nYou clash, but everyone survives. They grumbles threats under their breaths as they leave.\n\n[[ Go to village center | HeadHome ]] \n",
-		"position": {
-			"x": -734,
-			"y": -1641
-		},
-		"colorID": 0
-	},
-	{
-		"title": "LetTheGuardsDoTheirThing",
-		"tags": "",
-		"body": "You keep your head down, and watch as the guards take the goods away.\n\nYou head to the center of town.\n\n[[ Go to village center | HeadHome ]] \n",
-		"position": {
-			"x": -446,
-			"y": -1641
-		},
-		"colorID": 0
-	},
-	{
-		"title": "HeadHome",
-		"tags": "",
-		"body": "You can see the street your home is on.\nYou and your friend decide to split up, and each of you can go home.\n\nAt home you have a conversation with your family who tell you about the monsters, bandits, and enemy forces in the area, and how the lord controls the town with an iron fist.\n\nYou decide to deal with the problems in the town,\n\n[[ Head to town center | MissionHub ]] ",
-		"position": {
-			"x": -734,
-			"y": -1353
-		},
-		"colorID": 0
-	},
-	{
-		"title": "BanditsInvestigation",
-		"tags": "",
-		"body": "<<set $doneBandits to true>> \n\nYour friend advises you to ask about the bandits in the local tavern.\nYou go in and some locals recognize you. They comment on how you have aged, and then you get down to business. They tell you that they attack travelers on the road towards X City.\n\n[[ Go and be the bait | BaitingBandits ]] ",
-		"position": {
-			"x": -373,
-			"y": -1047
-		},
-		"colorID": 0
-	},
-	{
-		"title": "MonstersInvestigation",
-		"tags": "",
-		"body": "<<set $doneMonsters to true>> \nYour friend says he heard that the attacks happened in the forest near the cemetery, so you head in that direction. As you ride up the road, you hear a rustle from the underbrush.\n\n[[ Quickly ride on | NearCemetery ]]\n[[ Get off the horse and ready weapons |  ReadyToFight]] \n[[ \"Who's there? | CallOut ]] ",
-		"position": {
-			"x": 940,
-			"y": -1033
-		},
-		"colorID": 0
-	},
-	{
-		"title": "EnemyUnitInvestigation",
-		"tags": "",
-		"body": "<<set $doneEnemy to true>> ",
-		"position": {
-			"x": 2241,
-			"y": -999
-		},
-		"colorID": 0
-	},
-	{
-		"title": "TownGuardInvestigation",
-		"tags": "",
-		"body": "<<set $doneGuards to true>> \n",
-		"position": {
-			"x": 3601,
-			"y": -975
-		},
-		"colorID": 0
-	},
-	{
-		"title": "Blacksmith",
-		"tags": "",
-		"body": "",
-		"position": {
-			"x": 1542,
-			"y": -2128
-		},
-		"colorID": 0
-	},
-	{
-		"title": "Healer",
-		"tags": "",
-		"body": "Empty Text\n",
-		"position": {
-			"x": 1542,
-			"y": -1801
-		},
-		"colorID": 0
-	},
-	{
-		"title": "BaitingBandits",
-		"tags": "",
-		"body": "You and your friend ride down that road and indeed bandits ambush you. They jump out of the roadside shrubbery, brandish weapons, and demand money. As you two also draw your weapons you notice one of the bandits is an childhood friend of yours.\n\n[[ Fight | FightBandits ]]\n[[ Talk to old friend | TalkToBanditFriend ]] \n[[ Preach at them | PreachAtBandits ]] ",
-		"position": {
-			"x": -377,
-			"y": -623
-		},
-		"colorID": 0
-	},
-	{
-		"title": "FightBandits",
-		"tags": "",
-		"body": "You kill them, and collect their weapons as proof that they are dead.\nYour fried challenges your decision.\n\n[[ They deserved what they got | IfYouSaySo ]]\n[[ I had to protect the innocents they keep attacking | IfYouSaySo ]]\n[[ The law must be upheld | IfYouSaySo ]] \n[[ It gets us the payday | IfYouSaySo ]] ",
-		"position": {
-			"x": -1314,
-			"y": -478
-		},
-		"colorID": 0
-	},
-	{
-		"title": "TalkToBanditFriend",
-		"tags": "",
-		"body": "You probe your friend-turned-bandit about heir life under the war. They tell you about their father and older brother leaving to the war, about their mom dying to a disease, and the lord seizing their family land when he couldn't pay the taxes.\n\n[[ I understand that life has been hard, but this not the solution | NoExcuses ]]\n[[ Propose starting a new life | NewLifeProposal ]]\n[[ You shouldn't have gone down this route. Time to die | FightBandits ]] ",
-		"position": {
-			"x": 34,
-			"y": -374
-		},
-		"colorID": 0
-	},
-	{
-		"title": "PreachAtBandits",
-		"tags": "",
-		"body": "You attempt to awaken empathy in the bandits with a speech. They aren't very receptive but they give context as to why they do what they do.\n\n[[ Fight | FightBandits]]\n[[ Propose they start a new life | NewLifeProposal]]\n[[ \"No excuses\" | NoExcuses ]] \n[[ I'll just go | LeavingTheBanditsAlone ]]",
-		"position": {
-			"x": -395,
-			"y": -280
-		},
-		"colorID": 0
-	},
-	{
-		"title": "IfYouSaySo",
-		"tags": "",
-		"body": "Your friend half heartedly accepts your argument.\n\n[[ Back to the town | MissionHub ]] ",
-		"position": {
-			"x": -762,
-			"y": 751
-		},
-		"colorID": 0
-	},
-	{
-		"title": "MissionHub",
-		"tags": "",
-		"body": "\n\n<< if $doneBandits != true>> \n[[ Investigate the issue of the Bandits | BanditsInvestigation ]] \n<< endif>> \n<< if $doneMonsters != true>> \n[[ Investigate the issue of the Monsters | MonstersInvestigation ]] \n<< endif>> \n<< if $doneEnemy != true>> \n[[ Investigate the issue of the Enemy units | EnemyUnitInvestigation ]]\n<< endif>> \n<< if $doneBandits == true and $doneEnemy == true and $doneBandits == true>> \n[[ Investigate the issue of the Town guards | TownGuardInvestigation]] \n<< endif>> \n[[ Visit the traders | TownServices ]] \n",
-		"position": {
-			"x": 188,
-			"y": -1882
-		},
-		"colorID": 0
-	},
-	{
-		"title": "NewLifeProposal",
-		"tags": "",
-		"body": "Tell them to leave and start a new life elsewhere. They must stop doing crime, but they don't have to get punished.\nThey tell you that they have no money and won't be able to start a new life.\n\n[[ Then die | FightBandits ]] \n[[ Offer to give them the bounty on their heads | BountyForTheHunted ]]\n",
-		"position": {
-			"x": -744,
-			"y": 64
-		},
-		"colorID": 0
-	},
-	{
-		"title": "NoExcuses",
-		"tags": "",
-		"body": "Hardships don't excuse unethical behavior. \n\n[[ Fight | FightBandits ]] ",
-		"position": {
-			"x": -729,
-			"y": -214
-		},
-		"colorID": 0
-	},
-	{
-		"title": "BountyForTheHunted",
-		"tags": "",
-		"body": "You propose this: They surrender their weapons to you. You take it all back to town and collect the bounty on their heads. Return with the money and give it to them, so they can start a new life.\n\nThey initially don't like it, but your old friend speaks up for you, and they agree.\nYou take a trip back to the village, get the money and return. The bandits thank you for your generous help and leave towards the city.\n\nYour friend questions your decision: Can they be trusted? What if they fall back on their old habits? Won't you be responsible for their future crimes? Shouldn't they be punished for their crimes?\n[[ Everyone deserves a second chance | IfYouSaySo ]] \n[[ They are good people in a bad situation | IfYouSaySo ]]\n[[ The real crime is that they were put into this situation | IfYouSaySo ]] ",
-		"position": {
-			"x": -733,
-			"y": 357
-		},
-		"colorID": 0
-	},
-	{
-		"title": "LeavingTheBanditsAlone",
-		"tags": "",
-		"body": "You decide you can't be the judge of them and leave.\n\nYour friend questions your decision. Won't you be complicit in their future crimes, because you let them go?\nDoes a difficult life excuse immoral acts?\n\n[[ Survival of the fittest | IfYouSaySo ]]\n[[ They aren't a danger to me | IfYouSaySo ]]\n[[ I have also done bad things in the war, I don't have the moral position to judge them. | IfYouSaySo ]] \n",
-		"position": {
-			"x": -195,
-			"y": 168
-		},
-		"colorID": 0
-	},
-	{
-		"title": "TownServices",
-		"tags": "",
-		"body": "[[ Visit the blacksmith | Blacksmith ]] \n[[ Visit the healer | Healer ]]",
-		"position": {
-			"x": 1038,
-			"y": -1884
-		},
-		"colorID": 0
-	},
-	{
-		"title": "NearCemetery",
-		"tags": "",
-		"body": "Zombies are crawling all over the cemetery. You must slay them.\nYou fight the zombies, put them in a pile and burn the bodies.\n\n[[ Ride back to town. | MissionHub ]] ",
-		"position": {
-			"x": 999,
-			"y": 700
-		},
-		"colorID": 0
-	},
-	{
-		"title": "ReadyToFight",
-		"tags": "",
-		"body": "You ready your weapon, and hop off your horse. You approach the brush slowly expecting the monster to jump out. You signal to your partner to go flank from the other side. On a silent count to three you both charge to surprise the skulker.\n\nYou manage to pin down the man, who turns out to be a deserter.\n\n[[ Turn him in | TurnIn]]\n[[ Let him go | LetGo ]]\n[[ Kill him | KillDeserter ]] ",
-		"position": {
-			"x": 715,
-			"y": -504
-		},
-		"colorID": 0
-	},
-	{
-		"title": "CallOut",
-		"tags": "",
-		"body": "\"Whoever lingers there, show yourself\"\n\nA man with a raised sword inches out from behind a tree. He is a deserter.\n\n[[ Fight him | FightDeserter ]]\n[[ Let him go | LetGo ]]\n[[ Tell him you will turn him in | TurnInThreat ]]",
-		"position": {
-			"x": 1179,
-			"y": -557
-		},
-		"colorID": 0
-	},
-	{
-		"title": "TurnIn",
-		"tags": "",
-		"body": "Despite his protests, you bind him, and return him to the town to be arrested.\nYour friend says it couldn't have been the deserter who is responsible for the monster attacks, you should still check the forest.\n\nSo you ride back to the forest.\n\nYour friend asks you to justify your decision.\n\n[[ Justification | WhateverYouSay2 ]] ",
-		"position": {
-			"x": 789,
-			"y": 96
-		},
-		"colorID": 0
-	},
-	{
-		"title": "LetGo",
-		"tags": "",
-		"body": "He is grateful, and he disappears into the forest.\n\nYour friend asks you to justify your decision.\n\n[[ Justification | WhateverYouSay2 ]] ",
-		"position": {
-			"x": 1140,
-			"y": 118
-		},
-		"colorID": 0
-	},
-	{
-		"title": "KillDeserter",
-		"tags": "",
-		"body": "You slice his throat and dump is body.\n\nYour friend challenges your decision:\nWas his crime severe enough to kill him? Did he truly deserve it? Even if he did, is it up to you to decide this? Why did you do it?\n\n[[ He let his fellow soldiers die, he was a coward. | WhateverYouSay2 ]] \n[[ He would have been a danger to the town | WhateverYouSay2 ]]",
-		"position": {
-			"x": 502,
-			"y": 131
-		},
-		"colorID": 0
-	},
-	{
-		"title": "FightDeserter",
-		"tags": "",
-		"body": "He lies at your feet, defeated, breathing heavy.\n\n[[ Turn him in | TurnIn ]]\n[[ Kill him | KillDeserter ]] \n[[ Let him go | LetGo ]] ",
-		"position": {
-			"x": 1536,
-			"y": 105
-		},
-		"colorID": 0
-	},
-	{
-		"title": "TurnInThreat",
-		"tags": "",
-		"body": "He attacks you\n\n[[ Fight | FightDeserter ]] ",
-		"position": {
-			"x": 1533,
-			"y": -316
-		},
-		"colorID": 0
-	},
-	{
-		"title": "Node63",
-		"tags": "",
-		"body": "Empty Text",
-		"position": {
-			"x": -1218,
-			"y": 166
-		},
-		"colorID": 0
-	},
-	{
-		"title": "WhateverYouSay2",
-		"tags": "",
-		"body": "Your friend half-heartedly accepts your reason.\n\n[[ Arrive near the cemetery | NearCemetery ]] ",
-		"position": {
-			"x": 626,
-			"y": 503
-		},
-		"colorID": 0
-	}
-]
+title: Start
+tags: 
+colorID: 0
+position: -1362,-320
+---
+It's raining, and you arrive back in your home valley after a long war. At your side rides your best friend and comrade form the front lines.
+It's raining like hell, and there is still a ways to go, so you set up camp.
+In the camp you have a chance to talk to your friend, to establish backgrounds
+Some wolves attack, You fight them. Go to sleep.
+
+
+[[ The next morning | BackOnTheRoad ]] 
+===
+title: BackOnTheRoad
+tags: 
+colorID: 0
+position: -1361,-55
+---
+You pack up camp and continue on your way.
+
+A traveling merchant comes moving the opposite direction.
+
+[[ Rob him | RobbingTheMerchant ]] 
+[[ Don't have the money, just move on. | MovingOn ]]
+===
+title: RobbingTheMerchant
+tags: 
+colorID: 0
+position: -1365,197
+---
+You rob him, get some HP back.
+
+[[ Arrive in the village | TheVillageEntry ]] 
+===
+title: MovingOn
+tags: 
+colorID: 0
+position: -1102,204
+---
+You get nothing, just keep going.
+
+[[ Arrive in the village | TheVillageEntry]] 
+===
+title: TheVillageEntry
+tags: 
+colorID: 0
+position: -433,-336
+---
+The village is different than you remember. Things are in worse condition, people seem downtrodden and weak.
+There is an explosion of movement out of a nearby store with a group of armed and armored town guards dragging out crates full of goods.
+
+[[ Intervene | OpposeGuards ]] 
+[[ Keep a low profile | LetTheGuardsDoTheirThing ]] 
+===
+title: OpposeGuards
+tags: 
+colorID: 0
+position: -417,-84
+---
+You call out the guards, it turns into a fight.
+
+You clash, but everyone survives. They grumbles threats under their breaths as they leave.
+
+[[ Go to village center | HeadHome ]] 
+===
+title: LetTheGuardsDoTheirThing
+tags: 
+colorID: 0
+position: -129,-84
+---
+You keep your head down, and watch as the guards take the goods away.
+
+You head to the center of town.
+
+[[ Go to village center | HeadHome ]] 
+===
+title: HeadHome
+tags: 
+colorID: 0
+position: -417,204
+---
+You can see the street your home is on.
+You and your friend decide to split up, and each of you can go home.
+
+At home you have a conversation with your family who tell you about the monsters, bandits, and enemy forces in the area, and how the lord controls the town with an iron fist.
+
+You decide to deal with the problems in the town,
+
+[[ Head to town center | MissionHub ]] 
+===
+title: BanditsInvestigation
+tags: 
+colorID: 0
+position: -56,510
+---
+<<set $doneBandits to true>> 
+
+Your friend advises you to ask about the bandits in the local tavern.
+You go in and some locals recognize you. They comment on how you have aged, and then you get down to business. They tell you that they attack travelers on the road towards X City.
+
+[[ Go and be the bait | BaitingBandits ]] 
+===
+title: MonstersInvestigation
+tags: 
+colorID: 0
+position: 1257,524
+---
+<<set $doneMonsters to true>> 
+Your friend says he heard that the attacks happened in the forest near the cemetery, so you head in that direction. As you ride up the road, you hear a rustle from the underbrush.
+
+[[ Quickly ride on | NearCemetery ]]
+[[ Get off the horse and ready weapons |  ReadyToFight]] 
+[[ "Who's there? | CallOut ]] 
+===
+title: EnemyUnitInvestigation
+tags: 
+colorID: 0
+position: 2558,558
+---
+<<set $doneEnemy to true>> 
+
+There are rumors that a child saw Orcs, when she was playing around in the steam caves near the river.
+You can question her, and she tells you she saw someone with green skin and tusks.
+
+[[ You head to the the caves | SteamCaves ]] 
+===
+title: TownGuardInvestigation
+tags: 
+colorID: 0
+position: 3851,567
+---
+<<set $doneGuards to true>> 
+You go to the guards for an audience with the lord. With your reputation and some chest-pounding you manage to get it.
+You negotiate with the lord to relinquish the iron grip he holds over the town, now that the dangers have been removed.
+
+[[ The end | End ]] 
+===
+title: Blacksmith
+tags: 
+colorID: 0
+position: 1688,-341
+---
+->Upgrade Weapon
+
+->Upgrade Armor
+
+[[ Back to town | TownServices ]]
+===
+title: Healer
+tags: 
+colorID: 0
+position: 1825,-589
+---
+->Get healed
+
+[[ Back to town | TownServices ]] 
+===
+title: BaitingBandits
+tags: 
+colorID: 0
+position: -60,934
+---
+You and your friend ride down that road and indeed bandits ambush you. They jump out of the roadside shrubbery, brandish weapons, and demand money. As you two also draw your weapons you notice one of the bandits is an childhood friend of yours.
+
+[[ Fight | FightBandits ]]
+[[ Talk to old friend | TalkToBanditFriend ]] 
+[[ Preach at them | PreachAtBandits ]] 
+===
+title: FightBandits
+tags: 
+colorID: 0
+position: -997,1079
+---
+You kill them, and collect their weapons as proof that they are dead.
+Your fried challenges your decision.
+
+[[ They deserved what they got | IfYouSaySo ]]
+[[ I had to protect the innocents they keep attacking | IfYouSaySo ]]
+[[ The law must be upheld | IfYouSaySo ]] 
+[[ It gets us the payday | IfYouSaySo ]] 
+===
+title: TalkToBanditFriend
+tags: 
+colorID: 0
+position: 351,1183
+---
+You probe your friend-turned-bandit about heir life under the war. They tell you about their father and older brother leaving to the war, about their mom dying to a disease, and the lord seizing their family land when he couldn't pay the taxes.
+
+[[ I understand that life has been hard, but this not the solution | NoExcuses ]]
+[[ Propose starting a new life | NewLifeProposal ]]
+[[ You shouldn't have gone down this route. Time to die | FightBandits ]] 
+===
+title: PreachAtBandits
+tags: 
+colorID: 0
+position: -78,1277
+---
+You attempt to awaken empathy in the bandits with a speech. They aren't very receptive but they give context as to why they do what they do.
+
+[[ Fight | FightBandits]]
+[[ Propose they start a new life | NewLifeProposal]]
+[[ "No excuses" | NoExcuses ]] 
+[[ I'll just go | LeavingTheBanditsAlone ]]
+===
+title: IfYouSaySo
+tags: 
+colorID: 0
+position: -445,2308
+---
+Your friend half heartedly accepts your argument.
+
+[[ Back to the town | MissionHub ]] 
+===
+title: MissionHub
+tags: 
+colorID: 0
+position: 505,-325
+---
+
+
+<< if $doneBandits != true>> 
+[[ Investigate the issue of the Bandits | BanditsInvestigation ]] 
+<< endif>> 
+<< if $doneMonsters != true>> 
+[[ Investigate the issue of the Monsters | MonstersInvestigation ]] 
+<< endif>> 
+<< if $doneEnemy != true>> 
+[[ Investigate the issue of the Enemy units | EnemyUnitInvestigation ]]
+<< endif>> 
+<< if $doneBandits == true and $doneEnemy == true and $doneBandits == true>> 
+[[ Investigate the issue of the Town guards | TownGuardInvestigation]] 
+<< endif>> 
+[[ Visit other parts of the town. | TownServices ]] 
+===
+title: NewLifeProposal
+tags: 
+colorID: 0
+position: -427,1621
+---
+Tell them to leave and start a new life elsewhere. They must stop doing crime, but they don't have to get punished.
+They tell you that they have no money and won't be able to start a new life.
+
+[[ Then die | FightBandits ]] 
+[[ Offer to give them the bounty on their heads | BountyForTheHunted ]]
+===
+title: NoExcuses
+tags: 
+colorID: 0
+position: -412,1343
+---
+Hardships don't excuse unethical behavior. 
+
+[[ Fight | FightBandits ]] 
+===
+title: BountyForTheHunted
+tags: 
+colorID: 0
+position: -416,1914
+---
+You propose this: They surrender their weapons to you. You take it all back to town and collect the bounty on their heads. Return with the money and give it to them, so they can start a new life.
+
+They initially don't like it, but your old friend speaks up for you, and they agree.
+You take a trip back to the village, get the money and return. The bandits thank you for your generous help and leave towards the city.
+
+Your friend questions your decision: Can they be trusted? What if they fall back on their old habits? Won't you be responsible for their future crimes? Shouldn't they be punished for their crimes?
+[[ Everyone deserves a second chance | IfYouSaySo ]] 
+[[ They are good people in a bad situation | IfYouSaySo ]]
+[[ The real crime is that they were put into this situation | IfYouSaySo ]] 
+===
+title: LeavingTheBanditsAlone
+tags: 
+colorID: 0
+position: 122,1725
+---
+You decide you can't be the judge of them and leave.
+
+Your friend questions your decision. Won't you be complicit in their future crimes, because you let them go?
+Does a difficult life excuse immoral acts?
+
+[[ Survival of the fittest | IfYouSaySo ]]
+[[ They aren't a danger to me | IfYouSaySo ]]
+[[ I have also done bad things in the war, I don't have the moral position to judge them. | IfYouSaySo ]] 
+===
+title: TownServices
+tags: 
+colorID: 0
+position: 1192,-662
+---
+[[ Visit the blacksmith | Blacksmith ]] 
+[[ Visit the healer | Healer ]]
+[[ Visit Town hall. | TownHall ]] 
+[[ Back to town center | MissionHub ]] 
+===
+title: NearCemetery
+tags: 
+colorID: 0
+position: 1316,2257
+---
+Zombies are crawling all over the cemetery. You must slay them.
+You fight the zombies, put them in a pile and burn the bodies.
+
+[[ Ride back to town. | MissionHub ]] 
+===
+title: ReadyToFight
+tags: 
+colorID: 0
+position: 1032,1053
+---
+You ready your weapon, and hop off your horse. You approach the brush slowly expecting the monster to jump out. You signal to your partner to go flank from the other side. On a silent count to three you both charge to surprise the skulker.
+
+You manage to pin down the man, who turns out to be a deserter.
+
+[[ Turn him in | TurnIn]]
+[[ Let him go | LetGo ]]
+[[ Kill him | KillDeserter ]] 
+===
+title: CallOut
+tags: 
+colorID: 0
+position: 1496,1000
+---
+"Whoever lingers there, show yourself"
+
+A man with a raised sword inches out from behind a tree. He is a deserter.
+
+[[ Fight him | FightDeserter ]]
+[[ Let him go | LetGo ]]
+[[ Tell him you will turn him in | TurnInThreat ]]
+===
+title: TurnIn
+tags: 
+colorID: 0
+position: 1106,1653
+---
+Despite his protests, you bind him, and return him to the town to be arrested.
+Your friend says it couldn't have been the deserter who is responsible for the monster attacks, you should still check the forest.
+
+So you ride back to the forest.
+
+Your friend asks you to justify your decision.
+
+[[ Justification | WhateverYouSay2 ]] 
+===
+title: LetGo
+tags: 
+colorID: 0
+position: 1457,1675
+---
+He is grateful, and he disappears into the forest.
+
+Your friend asks you to justify your decision.
+
+[[ Justification | WhateverYouSay2 ]] 
+===
+title: KillDeserter
+tags: 
+colorID: 0
+position: 819,1688
+---
+You slice his throat and dump is body.
+
+Your friend challenges your decision:
+Was his crime severe enough to kill him? Did he truly deserve it? Even if he did, is it up to you to decide this? Why did you do it?
+
+[[ He let his fellow soldiers die, he was a coward. | WhateverYouSay2 ]] 
+[[ He would have been a danger to the town | WhateverYouSay2 ]]
+===
+title: FightDeserter
+tags: 
+colorID: 0
+position: 1853,1662
+---
+He lies at your feet, defeated, breathing heavy.
+
+[[ Turn him in | TurnIn ]]
+[[ Kill him | KillDeserter ]] 
+[[ Let him go | LetGo ]] 
+===
+title: TurnInThreat
+tags: 
+colorID: 0
+position: 1850,1241
+---
+He attacks you
+
+[[ Fight | FightDeserter ]] 
+===
+title: Node63
+tags: 
+colorID: 0
+position: -901,1723
+---
+Empty Text
+===
+title: WhateverYouSay2
+tags: 
+colorID: 0
+position: 943,2060
+---
+Your friend half-heartedly accepts your reason.
+
+[[ Arrive near the cemetery | NearCemetery ]] 
+===
+title: SteamCaves
+tags: 
+colorID: 0
+position: 2593,1011
+---
+The cave has thermal water-pools in it, and so the mouth of it is usually releasing copious amounts of steam. The inside is hot, and your vision is limited by the steam in the air.
+
+As you wander in, you see hulking shapes emerge from the mist. Armed and armored orcs, wielding heavy axes and hammers.
+
+They seem wary of you, and one of the biggest ones speaks up:
+
+"We have no quarrel with you, human, but we can't allow you to bring your armies down upon us. You must die."
+
+[[ So be it! | FightOrcs ]]
+[[ I'm sure we can find another way. | Negotiation ]]
+[[ You will have to catch me first | Run ]]
+===
+title: FightOrcs
+tags: 
+colorID: 0
+position: 2209,1509
+---
+You fight them.
+
+Your friend questions your decision.
+The war is over, should we not have tired to negotiate? 
+They let the child go, maybe they could have been reasoned with!
+After all, our countries are in peace now.
+
+[[ Their kind killed many of my friends on the front lines. | Sure ]]
+[[ We couldn't risk it. They were too close to the town. | Sure ]]
+[[ They said we had to die. It was self-defense. | Sure ]]
+===
+title: Negotiation
+tags: 
+colorID: 0
+position: 2620,1297
+---
+"woah, woah, woah! Let's not get ahead of ourselves. We aren't here to fight you, or to bring armies down upon you. The war is over."
+
+The orcs didn't know the war has ended, they have been separated from their unit, and had no line of communication to their leaders. They require proof. There is an official notice posted on the door of the church in town. You can go get it.
+
+[[ Get the notice | GetTheNotice ]]
+[[ Get the guards | GetTheGuards]] 
+===
+title: Run
+tags: 
+colorID: 0
+position: 3075,1293
+---
+You hightail it towards the door, dodging between swinging weapons, and disappearing through the mist. You get to the cave's mouth and dashing out into the open air. You hop on your horses and ride off towards the village. You have several bleeding wounds.
+
+You arrive back in town, with only one idea, of what to do.
+
+[[ Report them to the guards. | GetTheGuards ]] 
+===
+title: Sure
+tags: 
+colorID: 0
+position: 2327,2243
+---
+Your friend half-heartedly accepts your reasoning.
+===
+title: GetTheNotice
+tags: 
+colorID: 0
+position: 2535,1592
+---
+You take a trip back to the town, collect the notice of the door, and deliver it to the Orcs. They realize they can return home, and do so.
+
+Your friend questions your decision?
+Should we not have killed them? They have probably killed many of our countrymen, and would have done the same to us without thinking. Don't we owe this to our fallen, and our nation to hunt down our enemies?
+
+[[ They were no longer our enemies | Sure ]] 
+[[ It wasn't our war, but our leaders'. The common soldiers are just tools. | Sure ]]
+[[ They let the kid go. Clearly they weren't bloodthirsty. | Sure ]] 
+===
+title: GetTheGuards
+tags: 
+colorID: 0
+position: 2814,1594
+---
+You let the guards know that you found an enemy unit nearby.
+You hear the head of the guard dispatches a unit to deal with them. It seems like they want to kill them. Your friend whispers to you that under the treaty, they should just be shipped back to their home country.
+
+[[ Stand up to the guard, and tell them that they mustn't kill the orcs. | GuardsDeportOrcs ]] 
+[[ Let them do what they want. | GuardsKillOrcs ]]
+===
+title: GuardsDeportOrcs
+tags: 
+colorID: 0
+position: 2700,1898
+---
+Soon, you see the orcs in chains being lead into town, loaded onto carriges, and taken away. The guard captain confirms they are prisoners of war, and will be taken to border to be released into their country.
+
+Your friend questions your decision. Should we not have killed them? They have probably killed many of our countrymen, and would have done the same to us without thinking.
+Or maybe we should have just let them go? What was the point of getting them captured? They could have gone home on their own.
+
+[[ This was the safest option. No-one got hurt. | Sure ]]
+[[ We can't trust them, but bloodshed was not necessary.| Sure ]] 
+[[ We followed the laws set by the peace treaty, which is the most important. | Sure ]] 
+===
+title: GuardsKillOrcs
+tags: 
+colorID: 0
+position: 2969,1895
+---
+The guards return bloodied a few hours later. They have undoubtedly killed the orcs. Some of them sport bad injuries, and they have two dead with them.
+
+Your friends question your decision:
+Was this necessary? Could this have been resolved without anyone getting hurt? We broke the law set up by the peace treaty! 
+
+[[ The guards did it, not us, it is not our responsibility. | Sure ]] 
+[[ They were a treat and had to be removed. | Sure ]] 
+[[ Their kind killed a lot of our friends, they had it coming. | Sure ]] 
+===
+title: Mayor
+tags: 
+colorID: 0
+position: 1747,-833
+---
+[[ Back to Town Hall. | TownHall ]] 
+===
+title: Notice.
+tags: 
+colorID: 0
+position: 1714,-1111
+---
+Multiple copies of the same notice are on the board. They detail the peace treaty and the terms of it.
+[[ Back to Town Hall | TownHall ]] 
+===
+title: TownHall
+tags: 
+colorID: 0
+position: 1265,-967
+---
+[[ Back to rest of the town | TownServices ]] 
+[[ Visit the mayor, to collect bounties. | Mayor ]] 
+[[ Visit the church to see any announcements. | Notice. ]] 
+===
+title: End
+tags: 
+colorID: 0
+position: 3879,904
+---
+You settle back with your family and live happily ever after.
+===
