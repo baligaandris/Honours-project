@@ -3,10 +3,17 @@ tags:
 colorID: 0
 position: -1362,-320
 ---
-It's raining, and you arrive back in your home valley after a long war. At your side rides your best friend and comrade form the front lines.
-It's raining like hell, and there is still a ways to go, so you set up camp.
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 0>>
+<<SwapBackgroundAudio BackgroundAudio 3>>
+You arrive back in your home valley after a long war. At your side rides your best friend and comrade form the front lines.
+There is still a ways to go, so you set up camp.
+<<SwapNPC NPCImage 10>>
 In the camp you have a chance to talk to your friend, to establish backgrounds
-Some wolves attack, You fight them. Go to sleep.
+Some wolves attack, You fight them. 
+<<CreateCombat CombatHandler>>
+<<ResolveCombat CombatHandler>>
+Go to sleep.
 
 
 [[ The next morning | BackOnTheRoad ]] 

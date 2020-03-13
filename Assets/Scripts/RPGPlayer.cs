@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+using TMPro;
 
 public class RPGPlayer : MonoBehaviour
 {
     public int hp = 100, damage = 10, defense = 0, gold = 0, XP=0;
     public int evasion = 10;
 
+    public int xpCostOf10Hp=1, xpCostOfDamage=1, xpCostOfDefense=1;
+
+    public TMP_Text hpText, xpText, goldText, damageText, defenceText, evasionText;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,7 @@ public class RPGPlayer : MonoBehaviour
     {
         XP -= 1;
         attribute += 1;
+        RefreshUI();
     }
 
     [YarnCommand("SpendMouney")]
@@ -62,7 +67,7 @@ public class RPGPlayer : MonoBehaviour
         int.TryParse(evasionIncrease, out evasionIncreaseInt);
         int.TryParse(defenseIncrease, out defenseIncreaseInt);
 
-        if (costInt<gold)
+        if (costInt<=gold)
         {
             gold -= costInt;
             hp += hpIncreaseInt;
@@ -70,6 +75,46 @@ public class RPGPlayer : MonoBehaviour
             evasion += evasionIncreaseInt;
             defense += defenseIncreaseInt;
         }
+        RefreshUI();
     }
-    
+
+    public void IncreaseDamage()
+    {
+        if (XP>=xpCostOfDamage)
+        {
+            damage++;
+            XP -= xpCostOfDamage;
+            RefreshUI();
+        }
+    }
+
+    public void IncreaseHP()
+    {
+        if (XP>=xpCostOf10Hp)
+        {
+            hp += 10;
+            XP -= xpCostOf10Hp;
+            RefreshUI();
+        }
+    }
+
+    public void IncreaseDefense()
+    {
+        if (XP>=xpCostOfDefense)
+        {
+            defense += 1;
+            XP -= xpCostOfDefense;
+            RefreshUI();
+        }
+    }
+
+    public void RefreshUI()
+    {
+        hpText.text = hp.ToString();
+        xpText.text = XP.ToString();
+        goldText.text = gold.ToString();
+        damageText.text = damage.ToString();
+        defenceText.text = defense.ToString();
+        evasionText.text = evasion.ToString();
+    }
 }
