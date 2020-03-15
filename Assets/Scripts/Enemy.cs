@@ -21,6 +21,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int incomingDamage)
     {
-        hp -= incomingDamage - defense;
+        if (incomingDamage>defense)
+        {
+            hp -= incomingDamage - defense;
+        }
+        else
+        {
+            hp -= 1;
+        }
+        
     }
 }

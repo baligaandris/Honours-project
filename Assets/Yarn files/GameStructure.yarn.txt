@@ -8,10 +8,10 @@ position: -1362,-320
 <<SwapBackgroundAudio BackgroundAudio 3>>
 You arrive back in your home valley after a long war. At your side rides your best friend and comrade form the front lines.
 There is still a ways to go, so you set up camp.
-<<SwapNPC NPCImage 10>>
+<<SwapNPC NPCImage 14>>
 In the camp you have a chance to talk to your friend, to establish backgrounds
 Some wolves attack, You fight them. 
-<<CreateCombat CombatHandler>>
+<<CreateCombat CombatHandler 0>>
 <<ResolveCombat CombatHandler>>
 Go to sleep.
 
@@ -24,9 +24,10 @@ colorID: 0
 position: -1361,-55
 ---
 You pack up camp and continue on your way.
-
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 11>>
 A traveling merchant comes moving the opposite direction.
-
+<<SwapNPC NPCImage 12>>
 [[ Rob him | RobbingTheMerchant ]] 
 [[ Don't have the money, just move on. | MovingOn ]]
 ===
@@ -35,7 +36,9 @@ tags:
 colorID: 0
 position: -1365,197
 ---
-You rob him, get some HP back.
+<<SpendMoney Player -5 10 0 0 0>>
+<<SwapNPC NPCImage 11>>
+You rob him, get some HP back and some money.
 
 [[ Arrive in the village | TheVillageEntry ]] 
 ===
@@ -44,6 +47,7 @@ tags:
 colorID: 0
 position: -1102,204
 ---
+<<SwapNPC NPCImage 11>>
 You get nothing, just keep going.
 
 [[ Arrive in the village | TheVillageEntry]] 
@@ -53,9 +57,11 @@ tags:
 colorID: 0
 position: -433,-336
 ---
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 11>>
 The village is different than you remember. Things are in worse condition, people seem downtrodden and weak.
 There is an explosion of movement out of a nearby store with a group of armed and armored town guards dragging out crates full of goods.
-
+<<SwapNPC NPCImage 6>>
 [[ Intervene | OpposeGuards ]] 
 [[ Keep a low profile | LetTheGuardsDoTheirThing ]] 
 ===
@@ -65,10 +71,11 @@ colorID: 0
 position: -417,-84
 ---
 You call out the guards, it turns into a fight.
-
+<<CreateCombat CombatHandler 1>>
+<<ResolveCombat CombatHandler>>
 You clash, but everyone survives. They grumbles threats under their breaths as they leave.
-
-[[ Go to village center | HeadHome ]] 
+<<SwapNPC NPCImage 11>>
+[[ Go home | HeadHome ]] 
 ===
 title: LetTheGuardsDoTheirThing
 tags: 
@@ -76,20 +83,23 @@ colorID: 0
 position: -129,-84
 ---
 You keep your head down, and watch as the guards take the goods away.
+<<SwapNPC NPCImage 11>>
+You head home.
 
-You head to the center of town.
-
-[[ Go to village center | HeadHome ]] 
+[[ Go home | HeadHome ]] 
 ===
 title: HeadHome
 tags: 
 colorID: 0
 position: -417,204
 ---
+<<SwapBackground BackgroundImage 10>>
+<<SwapNPC NPCImage 11>>
 You can see the street your home is on.
 You and your friend decide to split up, and each of you can go home.
-
-At home you have a conversation with your family who tell you about the monsters, bandits, and enemy forces in the area, and how the lord controls the town with an iron fist.
+<<SwapBackground BackgroundImage 9>>
+<<SwapNPC NPCImage 13>>
+At home you have a conversation with your sister, who tells you about the monsters, bandits, and enemy forces in the area, and how the lord controls the town with an iron fist.
 
 You decide to deal with the problems in the town,
 
@@ -101,8 +111,10 @@ colorID: 0
 position: -56,510
 ---
 <<set $doneBandits to true>> 
-
+<<SwapNPC NPCImage 11>>
 Your friend advises you to ask about the bandits in the local tavern.
+<<SwapBackground BackgroundImage 16>>
+<<SwapNPC NPCImage 4>>
 You go in and some locals recognize you. They comment on how you have aged, and then you get down to business. They tell you that they attack travelers on the road towards X City.
 
 [[ Go and be the bait | BaitingBandits ]] 
@@ -112,8 +124,12 @@ tags:
 colorID: 0
 position: 1257,524
 ---
-<<set $doneMonsters to true>> 
-Your friend says he heard that the attacks happened in the forest near the cemetery, so you head in that direction. As you ride up the road, you hear a rustle from the underbrush.
+<<set $doneMonsters to true>>
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 7>>
+Your friend says he heard that the attacks happened in the forest near the cemetery, so you head in that direction.
+
+As you ride up the road, you hear a rustle from the underbrush.
 
 [[ Quickly ride on | NearCemetery ]]
 [[ Get off the horse and ready weapons |  ReadyToFight]] 
@@ -125,9 +141,11 @@ colorID: 0
 position: 2558,558
 ---
 <<set $doneEnemy to true>> 
-
-There are rumors that a child saw Orcs, when she was playing around in the steam caves near the river.
-You can question her, and she tells you she saw someone with green skin and tusks.
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 14>>
+There are rumors that a miner saw Orcs, when he was investigating the veins in caves near the river.
+<<SwapNPC NPCImage 12>>
+You can question him, and he tells you she saw someone with green skin and tusks.
 
 [[ You head to the the caves | SteamCaves ]] 
 ===
@@ -137,7 +155,11 @@ colorID: 0
 position: 3851,567
 ---
 <<set $doneGuards to true>> 
-You go to the guards for an audience with the lord. With your reputation and some chest-pounding you manage to get it.
+<<SwapNPC NPCImage 11>>
+You go to the guards for an audience with the lord. 
+<<SwapBackground BackgroundImage 2>>
+<<SwapNPC NPCImage 6>>
+With your reputation and some chest-pounding you manage to get it.
 You negotiate with the lord to relinquish the iron grip he holds over the town, now that the dangers have been removed.
 
 [[ The end | End ]] 
@@ -147,27 +169,40 @@ tags:
 colorID: 0
 position: 1688,-341
 ---
-->Upgrade Weapon
-
-->Upgrade Armor
-
-[[ Back to town | TownServices ]]
+<<SwapNPC NPCImage 1>>
+<<SwapBackground BackgroundImage 12>>
+->Upgrade Weapon for 10 gold
+	<<SpendMoney Player 10 0 5 0 0>>
+	[[Blacksmith]]
+->Upgrade Armor for 10 gold
+	<<SpendMoney Player 10 0 0 0 5>>
+	[[Blacksmith]]
+->Back to town
+	[[TownServices]] 
 ===
 title: Healer
 tags: 
 colorID: 0
 position: 1825,-589
 ---
-->Get healed
-
-[[ Back to town | TownServices ]] 
+<<SwapNPC NPCImage 0>>
+<<SwapBackground BackgroundImage 13>>
+->Get healed for 5 gold
+	<<SpendMoney Player 5 10 0 0 0>>
+	[[Healer]]
+->Back to town
+	[[TownServices]] 
 ===
 title: BaitingBandits
 tags: 
 colorID: 0
 position: -60,934
 ---
-You and your friend ride down that road and indeed bandits ambush you. They jump out of the roadside shrubbery, brandish weapons, and demand money. As you two also draw your weapons you notice one of the bandits is an childhood friend of yours.
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 6>>
+You and your friend ride down that road and indeed bandits ambush you. 
+<<SwapNPC NPCImage 3>>
+They jump out of the roadside shrubbery, brandish weapons, and demand money. As you two also draw your weapons you notice one of the bandits is an childhood friend of yours.
 
 [[ Fight | FightBandits ]]
 [[ Talk to old friend | TalkToBanditFriend ]] 
@@ -178,8 +213,11 @@ tags:
 colorID: 0
 position: -997,1079
 ---
+<<SwapNPC NPCImage 11>>
+<<CreateCombat CombatHandler 2>>
+<<ResolveCombat CombatHandler>>
 You kill them, and collect their weapons as proof that they are dead.
-Your fried challenges your decision.
+Your friend challenges your decision.
 
 [[ They deserved what they got | IfYouSaySo ]]
 [[ I had to protect the innocents they keep attacking | IfYouSaySo ]]
@@ -191,6 +229,7 @@ tags:
 colorID: 0
 position: 351,1183
 ---
+<<SwapNPC NPCImage 2>>
 You probe your friend-turned-bandit about heir life under the war. They tell you about their father and older brother leaving to the war, about their mom dying to a disease, and the lord seizing their family land when he couldn't pay the taxes.
 
 [[ I understand that life has been hard, but this not the solution | NoExcuses ]]
@@ -202,6 +241,7 @@ tags:
 colorID: 0
 position: -78,1277
 ---
+<<SwapNPC NPCImage 3>>
 You attempt to awaken empathy in the bandits with a speech. They aren't very receptive but they give context as to why they do what they do.
 
 [[ Fight | FightBandits]]
@@ -214,6 +254,7 @@ tags:
 colorID: 0
 position: -445,2308
 ---
+<<SwapNPC NPCImage 14>>
 Your friend half heartedly accepts your argument.
 
 [[ Back to the town | MissionHub ]] 
@@ -223,7 +264,9 @@ tags:
 colorID: 0
 position: 505,-325
 ---
-
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 14>>
+Where do you want to go?
 
 << if $doneBandits != true>> 
 [[ Investigate the issue of the Bandits | BanditsInvestigation ]] 
@@ -244,6 +287,7 @@ tags:
 colorID: 0
 position: -427,1621
 ---
+<<SwapNPC NPCImage 3>>
 Tell them to leave and start a new life elsewhere. They must stop doing crime, but they don't have to get punished.
 They tell you that they have no money and won't be able to start a new life.
 
@@ -255,6 +299,7 @@ tags:
 colorID: 0
 position: -412,1343
 ---
+<<SwapNPC NPCImage 3>>
 Hardships don't excuse unethical behavior. 
 
 [[ Fight | FightBandits ]] 
@@ -264,11 +309,13 @@ tags:
 colorID: 0
 position: -416,1914
 ---
+<<SwapNPC NPCImage 3>>
 You propose this: They surrender their weapons to you. You take it all back to town and collect the bounty on their heads. Return with the money and give it to them, so they can start a new life.
 
 They initially don't like it, but your old friend speaks up for you, and they agree.
 You take a trip back to the village, get the money and return. The bandits thank you for your generous help and leave towards the city.
 
+<<SwapNPC NPCImage 14>>
 Your friend questions your decision: Can they be trusted? What if they fall back on their old habits? Won't you be responsible for their future crimes? Shouldn't they be punished for their crimes?
 [[ Everyone deserves a second chance | IfYouSaySo ]] 
 [[ They are good people in a bad situation | IfYouSaySo ]]
@@ -279,8 +326,9 @@ tags:
 colorID: 0
 position: 122,1725
 ---
+<<SwapNPC NPCImage 3>>
 You decide you can't be the judge of them and leave.
-
+<<SwapNPC NPCImage 11>>
 Your friend questions your decision. Won't you be complicit in their future crimes, because you let them go?
 Does a difficult life excuse immoral acts?
 
@@ -293,6 +341,8 @@ tags:
 colorID: 0
 position: 1192,-662
 ---
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 11>>
 [[ Visit the blacksmith | Blacksmith ]] 
 [[ Visit the healer | Healer ]]
 [[ Visit Town hall. | TownHall ]] 
@@ -303,7 +353,11 @@ tags:
 colorID: 0
 position: 1316,2257
 ---
+<<SwapBackground BackgroundImage 8>>
+<<SwapNPC NPCImage 9>>
 Zombies are crawling all over the cemetery. You must slay them.
+<<CreateCombat CombatHandler 5>>
+<<ResolveCombat CombatHandler>>
 You fight the zombies, put them in a pile and burn the bodies.
 
 [[ Ride back to town. | MissionHub ]] 
@@ -313,8 +367,9 @@ tags:
 colorID: 0
 position: 1032,1053
 ---
+<<SwapNPC NPCImage 11>>
 You ready your weapon, and hop off your horse. You approach the brush slowly expecting the monster to jump out. You signal to your partner to go flank from the other side. On a silent count to three you both charge to surprise the skulker.
-
+<<SwapNPC NPCImage 6>>
 You manage to pin down the man, who turns out to be a deserter.
 
 [[ Turn him in | TurnIn]]
@@ -326,9 +381,11 @@ tags:
 colorID: 0
 position: 1496,1000
 ---
+<<SwapNPC NPCImage 11>>
 "Whoever lingers there, show yourself"
 
 A man with a raised sword inches out from behind a tree. He is a deserter.
+<<SwapNPC NPCImage 6>>
 
 [[ Fight him | FightDeserter ]]
 [[ Let him go | LetGo ]]
@@ -339,11 +396,13 @@ tags:
 colorID: 0
 position: 1106,1653
 ---
+<<SwapNPC NPCImage 6>>
 Despite his protests, you bind him, and return him to the town to be arrested.
+<<SwapNPC NPCImage 11>>
 Your friend says it couldn't have been the deserter who is responsible for the monster attacks, you should still check the forest.
 
 So you ride back to the forest.
-
+<<SwapNPC NPCImage 14>>
 Your friend asks you to justify your decision.
 
 [[ Justification | WhateverYouSay2 ]] 
@@ -353,8 +412,9 @@ tags:
 colorID: 0
 position: 1457,1675
 ---
+<<SwapNPC NPCImage 6>>
 He is grateful, and he disappears into the forest.
-
+<<SwapNPC NPCImage 14>>
 Your friend asks you to justify your decision.
 
 [[ Justification | WhateverYouSay2 ]] 
@@ -364,8 +424,10 @@ tags:
 colorID: 0
 position: 819,1688
 ---
+<<SwapNPC NPCImage 6>>
 You slice his throat and dump is body.
 
+<<SwapNPC NPCImage 14>>
 Your friend challenges your decision:
 Was his crime severe enough to kill him? Did he truly deserve it? Even if he did, is it up to you to decide this? Why did you do it?
 
@@ -377,6 +439,7 @@ tags:
 colorID: 0
 position: 1853,1662
 ---
+<<SwapNPC NPCImage 6>>
 He lies at your feet, defeated, breathing heavy.
 
 [[ Turn him in | TurnIn ]]
@@ -388,7 +451,10 @@ tags:
 colorID: 0
 position: 1850,1241
 ---
+<<SwapNPC NPCImage 6>>
 He attacks you
+<<CreateCombat CombatHandler 3>>
+<<ResolveCombat CombatHandler>>
 
 [[ Fight | FightDeserter ]] 
 ===
@@ -397,6 +463,7 @@ tags:
 colorID: 0
 position: -901,1723
 ---
+<<SwapNPC NPCImage 11>>
 Empty Text
 ===
 title: WhateverYouSay2
@@ -404,6 +471,7 @@ tags:
 colorID: 0
 position: 943,2060
 ---
+<<SwapNPC NPCImage 14>>
 Your friend half-heartedly accepts your reason.
 
 [[ Arrive near the cemetery | NearCemetery ]] 
@@ -413,12 +481,14 @@ tags:
 colorID: 0
 position: 2593,1011
 ---
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 3>>
 The cave has thermal water-pools in it, and so the mouth of it is usually releasing copious amounts of steam. The inside is hot, and your vision is limited by the steam in the air.
 
 As you wander in, you see hulking shapes emerge from the mist. Armed and armored orcs, wielding heavy axes and hammers.
 
 They seem wary of you, and one of the biggest ones speaks up:
-
+<<SwapNPC NPCImage 8>>
 "We have no quarrel with you, human, but we can't allow you to bring your armies down upon us. You must die."
 
 [[ So be it! | FightOrcs ]]
@@ -430,11 +500,14 @@ tags:
 colorID: 0
 position: 2209,1509
 ---
+<<SwapNPC NPCImage 8>>
 You fight them.
-
+<<CreateCombat CombatHandler 4>>
+<<ResolveCombat CombatHandler>>
+<<SwapNPC NPCImage 14>>
 Your friend questions your decision.
-The war is over, should we not have tired to negotiate? 
-They let the child go, maybe they could have been reasoned with!
+The war is over, should we not have tried to negotiate? 
+They let the miner go, maybe they could have been reasoned with!
 After all, our countries are in peace now.
 
 [[ Their kind killed many of my friends on the front lines. | Sure ]]
@@ -446,6 +519,7 @@ tags:
 colorID: 0
 position: 2620,1297
 ---
+<<SwapNPC NPCImage 8>>
 "woah, woah, woah! Let's not get ahead of ourselves. We aren't here to fight you, or to bring armies down upon you. The war is over."
 
 The orcs didn't know the war has ended, they have been separated from their unit, and had no line of communication to their leaders. They require proof. There is an official notice posted on the door of the church in town. You can go get it.
@@ -458,8 +532,10 @@ tags:
 colorID: 0
 position: 3075,1293
 ---
+<<SwapNPC NPCImage 11>>
 You hightail it towards the door, dodging between swinging weapons, and disappearing through the mist. You get to the cave's mouth and dashing out into the open air. You hop on your horses and ride off towards the village. You have several bleeding wounds.
 
+<<SwapBackground BackgroundImage 14>>
 You arrive back in town, with only one idea, of what to do.
 
 [[ Report them to the guards. | GetTheGuards ]] 
@@ -469,6 +545,7 @@ tags:
 colorID: 0
 position: 2327,2243
 ---
+<<SwapNPC NPCImage 14>>
 Your friend half-heartedly accepts your reasoning.
 ===
 title: GetTheNotice
@@ -476,9 +553,16 @@ tags:
 colorID: 0
 position: 2535,1592
 ---
-You take a trip back to the town, collect the notice of the door, and deliver it to the Orcs. They realize they can return home, and do so.
-
-Your friend questions your decision?
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 14>>
+You take a trip back to the town, collect the notice of the door, 
+<<SwapBackground BackgroundImage 4>>
+and deliver it to the Orcs. 
+<<SwapNPC NPCImage 8>>
+<<SwapBackground BackgroundImage 3>>
+They realize they can return home, and do so.
+<<SwapNPC NPCImage 14>>
+Your friend questions your decision.
 Should we not have killed them? They have probably killed many of our countrymen, and would have done the same to us without thinking. Don't we owe this to our fallen, and our nation to hunt down our enemies?
 
 [[ They were no longer our enemies | Sure ]] 
@@ -490,8 +574,12 @@ tags:
 colorID: 0
 position: 2814,1594
 ---
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 6>>
 You let the guards know that you found an enemy unit nearby.
-You hear the head of the guard dispatches a unit to deal with them. It seems like they want to kill them. Your friend whispers to you that under the treaty, they should just be shipped back to their home country.
+You hear the head of the guard dispatches a unit to deal with them. It seems like they want to kill them. 
+<<SwapNPC NPCImage 14>>
+Your friend whispers to you that under the treaty, they should just be shipped back to their home country.
 
 [[ Stand up to the guard, and tell them that they mustn't kill the orcs. | GuardsDeportOrcs ]] 
 [[ Let them do what they want. | GuardsKillOrcs ]]
@@ -501,8 +589,12 @@ tags:
 colorID: 0
 position: 2700,1898
 ---
+<<SwapNPC NPCImage 11>>
 Soon, you see the orcs in chains being lead into town, loaded onto carriges, and taken away. The guard captain confirms they are prisoners of war, and will be taken to border to be released into their country.
-
+<<SwapNPC NPCImage 6>>
+You are rewarded for your service, but are given less because you interfered.
+<<SkipCombat CombatHandler 5 10>>
+<<SwapNPC NPCImage 14>>
 Your friend questions your decision. Should we not have killed them? They have probably killed many of our countrymen, and would have done the same to us without thinking.
 Or maybe we should have just let them go? What was the point of getting them captured? They could have gone home on their own.
 
@@ -515,8 +607,12 @@ tags:
 colorID: 0
 position: 2969,1895
 ---
+<<SwapNPC NPCImage 11>>
 The guards return bloodied a few hours later. They have undoubtedly killed the orcs. Some of them sport bad injuries, and they have two dead with them.
-
+<<SwapNPC NPCImage 6>>
+You are rewarded for your service. You get a pat on the shoulder for being a true patriot.
+<<SkipCombat CombatHandler 10 10>>
+<<SwapNPC NPCImage 14>>
 Your friends question your decision:
 Was this necessary? Could this have been resolved without anyone getting hurt? We broke the law set up by the peace treaty! 
 
@@ -529,6 +625,7 @@ tags:
 colorID: 0
 position: 1747,-833
 ---
+<<SwapNPC NPCImage 11>>
 [[ Back to Town Hall. | TownHall ]] 
 ===
 title: Notice.
@@ -536,6 +633,7 @@ tags:
 colorID: 0
 position: 1714,-1111
 ---
+<<SwapNPC NPCImage 11>>
 Multiple copies of the same notice are on the board. They detail the peace treaty and the terms of it.
 [[ Back to Town Hall | TownHall ]] 
 ===
@@ -544,6 +642,7 @@ tags:
 colorID: 0
 position: 1265,-967
 ---
+<<SwapNPC NPCImage 11>>
 [[ Back to rest of the town | TownServices ]] 
 [[ Visit the mayor, to collect bounties. | Mayor ]] 
 [[ Visit the church to see any announcements. | Notice. ]] 
@@ -553,5 +652,6 @@ tags:
 colorID: 0
 position: 3879,904
 ---
+<<SwapNPC NPCImage 11>>
 You settle back with your family and live happily ever after.
 ===

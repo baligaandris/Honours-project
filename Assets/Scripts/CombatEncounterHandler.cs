@@ -30,8 +30,9 @@ public class CombatEncounterHandler : MonoBehaviour
 
     }
     [YarnCommand("CreateCombat")]
-    public void CreateCombatEncounter()
+    public void CreateCombatEncounter(string combatIndex)
     {
+        int.TryParse(combatIndex, out encounterIndex);
         activeEnemy = Instantiate(encounters[encounterIndex].enemy);
         inCombat = true;
         RefreshUI();
@@ -62,7 +63,6 @@ public class CombatEncounterHandler : MonoBehaviour
             player.gold += encounters[encounterIndex].rewardGold;
             player.XP += encounters[encounterIndex].rewardXP;
             inCombat = false;
-            encounterIndex++;
         }
     }
     [YarnCommand("SkipCombat")]
@@ -73,7 +73,6 @@ public class CombatEncounterHandler : MonoBehaviour
         int.TryParse(skipGold, out skipGoldInt);
         player.XP += skipXPInt;
         player.gold += skipGoldInt;
-        encounterIndex++;
         RefreshUI();
     }
 

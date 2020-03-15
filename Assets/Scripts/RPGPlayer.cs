@@ -27,7 +27,14 @@ public class RPGPlayer : MonoBehaviour
 
     public void TakeDamage(int incomingDamage)
     {
-        hp -= incomingDamage - defense;
+        if (incomingDamage > defense)
+        {
+            hp -= incomingDamage - defense;
+        }
+        else
+        {
+            hp -= 1;
+        }
     }
 
     public void Attack(Enemy enemy)
@@ -55,7 +62,7 @@ public class RPGPlayer : MonoBehaviour
         RefreshUI();
     }
 
-    [YarnCommand("SpendMouney")]
+    [YarnCommand("SpendMoney")]
     public void SpendMoney(string cost, string hpIncrease, string damageIncrease, string evasionIncrease, string defenseIncrease)
     {
         int costInt, hpIncreaseInt, damageIncreaseInt, evasionIncreaseInt, defenseIncreaseInt;
