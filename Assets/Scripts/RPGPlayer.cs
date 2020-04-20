@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class RPGPlayer : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class RPGPlayer : MonoBehaviour
     public int xpCostOf10Hp=1, xpCostOfDamage=1, xpCostOfDefense=1;
 
     public TMP_Text hpText, xpText, goldText, damageText, defenceText, evasionText;
+    public bool dead=false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,27 @@ public class RPGPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FadeTextToWhite(hpText, 1);
+        FadeTextToWhite(xpText, 1);
+        FadeTextToWhite(goldText, 1);
+        FadeTextToWhite(damageText, 1);
+        FadeTextToWhite(defenceText, 1);
+        FadeTextToWhite(evasionText, 1);
 
+        if (hp<=0 && dead==false)
+        {
+            FindObjectOfType<DialogueRunner>().StartDialogue("Death");
+            dead = true;
+        }
+    }
+    [YarnCommand("Restart")]
+    public void Restart() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    [YarnCommand("Quit")]
+    public void Quit() {
+        Application.Quit();
     }
 
     public void TakeDamage(int incomingDamage)
@@ -117,11 +139,54 @@ public class RPGPlayer : MonoBehaviour
 
     public void RefreshUI()
     {
-        hpText.text = hp.ToString();
-        xpText.text = XP.ToString();
-        goldText.text = gold.ToString();
-        damageText.text = damage.ToString();
-        defenceText.text = defense.ToString();
-        evasionText.text = evasion.ToString();
+        if (hpText.text!= hp.ToString())
+        {
+            FlashInColor(hpText, hp);
+            hpText.text = hp.ToString();
+        }
+        if (xpText.text != XP.ToString())
+        {
+            FlashInColor(xpText, XP);
+            xpText.text = XP.ToString();
+        }
+        if (goldText.text != gold.ToString())
+        {
+            FlashInColor(goldText, gold);
+            goldText.text = gold.ToString();
+        }
+        if (damageText.text != damage.ToString())
+        {
+            FlashInColor(damageText, damage);
+            damageText.text = damage.ToString();
+        }
+        if (defenceText.text != defense.ToString())
+        {
+            FlashInColor(defenceText, defense);
+            defenceText.text = defense.ToString();
+        }
+        if (evasionText.text != evasion.ToString())
+        {
+            FlashInColor(evasionText, evasion);
+            evasionText.text = evasion.ToString();
+        }
+
+    }
+
+    public void FlashInColor(TMP_Text text, int currentvalue)
+    {
+        int displayValue;
+        int.TryParse(text.text, out displayValue);
+        if (displayValue > currentvalue)
+        {
+            text.color = Color.red;
+        }
+        else
+        {
+            text.color = Color.green;
+        }
+    }
+    public void FadeTextToWhite(TMP_Text text, int speed)
+    {
+        text.color = new Color(text.color.r + speed*Time.deltaTime, text.color.g + speed*Time.deltaTime, text.color.b + speed* Time.deltaTime);
     }
 }

@@ -274,7 +274,7 @@ namespace Eachb.YarnDialogue
         }
         void Update()
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") /*|| Input.GetButtonDown("Fire1")*/)
             {
                 TrySkip=true;
             }

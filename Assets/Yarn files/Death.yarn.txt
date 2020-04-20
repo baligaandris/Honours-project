@@ -1,0 +1,14 @@
+title: Death
+tags: 
+colorID: 0
+position: 379,339
+---
+You fight heroically, but eventually succumb to your wounds.
+
+Your story ends here. You can start over, or move on to the test.
+
+->Start Over
+    <<Restart Player>> 
+->Quit Game
+    <<Quit Player>>
+===

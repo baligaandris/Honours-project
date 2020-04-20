@@ -15,7 +15,6 @@ Some wolves attack, You fight them.
 <<ResolveCombat CombatHandler>>
 Go to sleep.
 
-
 [[ The next morning | BackOnTheRoad ]] 
 ===
 title: BackOnTheRoad
@@ -26,6 +25,7 @@ position: -1361,-55
 You pack up camp and continue on your way.
 <<SwapNPC NPCImage 11>>
 <<SwapBackground BackgroundImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
 A traveling merchant comes moving the opposite direction.
 <<SwapNPC NPCImage 12>>
 [[ Rob him | RobbingTheMerchant ]] 
@@ -59,6 +59,7 @@ position: -433,-336
 ---
 <<SwapBackground BackgroundImage 14>>
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 The village is different than you remember. Things are in worse condition, people seem downtrodden and weak.
 There is an explosion of movement out of a nearby store with a group of armed and armored town guards dragging out crates full of goods.
 <<SwapNPC NPCImage 6>>
@@ -99,6 +100,7 @@ You can see the street your home is on.
 You and your friend decide to split up, and each of you can go home.
 <<SwapBackground BackgroundImage 9>>
 <<SwapNPC NPCImage 13>>
+<<SwapBackgroundAudio BackgroundAudio silence>>
 At home you have a conversation with your sister, who tells you about the monsters, bandits, and enemy forces in the area, and how the lord controls the town with an iron fist.
 
 You decide to deal with the problems in the town,
@@ -112,9 +114,11 @@ position: -56,510
 ---
 <<set $doneBandits to true>> 
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 Your friend advises you to ask about the bandits in the local tavern.
 <<SwapBackground BackgroundImage 16>>
 <<SwapNPC NPCImage 4>>
+<<SwapBackgroundAudio BackgroundAudio 0>>
 You go in and some locals recognize you. They comment on how you have aged, and then you get down to business. They tell you that they attack travelers on the road towards X City.
 
 [[ Go and be the bait | BaitingBandits ]] 
@@ -127,6 +131,7 @@ position: 1257,524
 <<set $doneMonsters to true>>
 <<SwapNPC NPCImage 11>>
 <<SwapBackground BackgroundImage 7>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
 Your friend says he heard that the attacks happened in the forest near the cemetery, so you head in that direction.
 
 As you ride up the road, you hear a rustle from the underbrush.
@@ -143,6 +148,7 @@ position: 2558,558
 <<set $doneEnemy to true>> 
 <<SwapNPC NPCImage 11>>
 <<SwapBackground BackgroundImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 There are rumors that a miner saw Orcs, when he was investigating the veins in caves near the river.
 <<SwapNPC NPCImage 12>>
 You can question him, and he tells you she saw someone with green skin and tusks.
@@ -156,6 +162,7 @@ position: 3851,567
 ---
 <<set $doneGuards to true>> 
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 You go to the guards for an audience with the lord. 
 <<SwapBackground BackgroundImage 2>>
 <<SwapNPC NPCImage 6>>
@@ -171,6 +178,7 @@ position: 1688,-341
 ---
 <<SwapNPC NPCImage 1>>
 <<SwapBackground BackgroundImage 12>>
+<<SwapBackgroundAudio BackgroundAudio 15>>
 ->Upgrade Weapon for 10 gold
 	<<SpendMoney Player 10 0 5 0 0>>
 	[[Blacksmith]]
@@ -187,6 +195,7 @@ position: 1825,-589
 ---
 <<SwapNPC NPCImage 0>>
 <<SwapBackground BackgroundImage 13>>
+<<SwapBackgroundAudio BackgroundAudio none>>
 ->Get healed for 5 gold
 	<<SpendMoney Player 5 10 0 0 0>>
 	[[Healer]]
@@ -200,6 +209,7 @@ position: -60,934
 ---
 <<SwapNPC NPCImage 11>>
 <<SwapBackground BackgroundImage 6>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
 You and your friend ride down that road and indeed bandits ambush you. 
 <<SwapNPC NPCImage 3>>
 They jump out of the roadside shrubbery, brandish weapons, and demand money. As you two also draw your weapons you notice one of the bandits is an childhood friend of yours.
@@ -266,6 +276,7 @@ position: 505,-325
 ---
 <<SwapBackground BackgroundImage 14>>
 <<SwapNPC NPCImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 Where do you want to go?
 
 << if $doneBandits != true>> 
@@ -313,8 +324,14 @@ position: -416,1914
 You propose this: They surrender their weapons to you. You take it all back to town and collect the bounty on their heads. Return with the money and give it to them, so they can start a new life.
 
 They initially don't like it, but your old friend speaks up for you, and they agree.
-You take a trip back to the village, get the money and return. The bandits thank you for your generous help and leave towards the city.
-
+<<SwapBackgroundAudio BackgroundAudio 13>>
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 6>>
+You take a trip back to the village, get the money and return. 
+<<SwapBackgroundAudio BackgroundAudio 9>>
+<<SwapBackground BackgroundImage 6>>
+<<SwapNPC NPCImage 3>>
+The bandits thank you for your generous help and leave towards the city.
 <<SwapNPC NPCImage 14>>
 Your friend questions your decision: Can they be trusted? What if they fall back on their old habits? Won't you be responsible for their future crimes? Shouldn't they be punished for their crimes?
 [[ Everyone deserves a second chance | IfYouSaySo ]] 
@@ -343,6 +360,7 @@ position: 1192,-662
 ---
 <<SwapBackground BackgroundImage 14>>
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 [[ Visit the blacksmith | Blacksmith ]] 
 [[ Visit the healer | Healer ]]
 [[ Visit Town hall. | TownHall ]] 
@@ -355,6 +373,7 @@ position: 1316,2257
 ---
 <<SwapBackground BackgroundImage 8>>
 <<SwapNPC NPCImage 9>>
+<<SwapBackgroundAudio BackgroundAudio 6>>
 Zombies are crawling all over the cemetery. You must slay them.
 <<CreateCombat CombatHandler 5>>
 <<ResolveCombat CombatHandler>>
@@ -368,8 +387,10 @@ colorID: 0
 position: 1032,1053
 ---
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 5>>
 You ready your weapon, and hop off your horse. You approach the brush slowly expecting the monster to jump out. You signal to your partner to go flank from the other side. On a silent count to three you both charge to surprise the skulker.
-<<SwapNPC NPCImage 6>>
+<<SwapNPC NPCImage 4>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
 You manage to pin down the man, who turns out to be a deserter.
 
 [[ Turn him in | TurnIn]]
@@ -382,10 +403,11 @@ colorID: 0
 position: 1496,1000
 ---
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 5>>
 "Whoever lingers there, show yourself"
-
+<<SwapBackgroundAudio BackgroundAudio 9>>
 A man with a raised sword inches out from behind a tree. He is a deserter.
-<<SwapNPC NPCImage 6>>
+<<SwapNPC NPCImage 4>>
 
 [[ Fight him | FightDeserter ]]
 [[ Let him go | LetGo ]]
@@ -396,8 +418,12 @@ tags:
 colorID: 0
 position: 1106,1653
 ---
+<<SwapNPC NPCImage 4>>
+Despite his protests, you bind him,
 <<SwapNPC NPCImage 6>>
-Despite his protests, you bind him, and return him to the town to be arrested.
+<<SwapBackground BackgroundImage 14>>
+and return him to the town to be arrested.
+<<SwapBackground BackgroundImage 7>>
 <<SwapNPC NPCImage 11>>
 Your friend says it couldn't have been the deserter who is responsible for the monster attacks, you should still check the forest.
 
@@ -412,7 +438,7 @@ tags:
 colorID: 0
 position: 1457,1675
 ---
-<<SwapNPC NPCImage 6>>
+<<SwapNPC NPCImage 4>>
 He is grateful, and he disappears into the forest.
 <<SwapNPC NPCImage 14>>
 Your friend asks you to justify your decision.
@@ -424,7 +450,7 @@ tags:
 colorID: 0
 position: 819,1688
 ---
-<<SwapNPC NPCImage 6>>
+<<SwapNPC NPCImage 4>>
 You slice his throat and dump is body.
 
 <<SwapNPC NPCImage 14>>
@@ -439,7 +465,7 @@ tags:
 colorID: 0
 position: 1853,1662
 ---
-<<SwapNPC NPCImage 6>>
+<<SwapNPC NPCImage 4>>
 He lies at your feet, defeated, breathing heavy.
 
 [[ Turn him in | TurnIn ]]
@@ -451,7 +477,7 @@ tags:
 colorID: 0
 position: 1850,1241
 ---
-<<SwapNPC NPCImage 6>>
+<<SwapNPC NPCImage 4>>
 He attacks you
 <<CreateCombat CombatHandler 3>>
 <<ResolveCombat CombatHandler>>
@@ -483,6 +509,7 @@ position: 2593,1011
 ---
 <<SwapNPC NPCImage 11>>
 <<SwapBackground BackgroundImage 3>>
+<<SwapBackgroundAudio BackgroundAudio 14>>
 The cave has thermal water-pools in it, and so the mouth of it is usually releasing copious amounts of steam. The inside is hot, and your vision is limited by the steam in the air.
 
 As you wander in, you see hulking shapes emerge from the mist. Armed and armored orcs, wielding heavy axes and hammers.
@@ -555,11 +582,13 @@ position: 2535,1592
 ---
 <<SwapNPC NPCImage 11>>
 <<SwapBackground BackgroundImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 You take a trip back to the town, collect the notice of the door, 
 <<SwapBackground BackgroundImage 4>>
 and deliver it to the Orcs. 
 <<SwapNPC NPCImage 8>>
 <<SwapBackground BackgroundImage 3>>
+<<SwapBackgroundAudio BackgroundAudio 14>>
 They realize they can return home, and do so.
 <<SwapNPC NPCImage 14>>
 Your friend questions your decision.
@@ -575,6 +604,7 @@ colorID: 0
 position: 2814,1594
 ---
 <<SwapBackground BackgroundImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 <<SwapNPC NPCImage 6>>
 You let the guards know that you found an enemy unit nearby.
 You hear the head of the guard dispatches a unit to deal with them. It seems like they want to kill them. 
@@ -626,6 +656,7 @@ colorID: 0
 position: 1747,-833
 ---
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 4>>
 [[ Back to Town Hall. | TownHall ]] 
 ===
 title: Notice.
@@ -634,6 +665,7 @@ colorID: 0
 position: 1714,-1111
 ---
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 Multiple copies of the same notice are on the board. They detail the peace treaty and the terms of it.
 [[ Back to Town Hall | TownHall ]] 
 ===
@@ -643,6 +675,7 @@ colorID: 0
 position: 1265,-967
 ---
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 [[ Back to rest of the town | TownServices ]] 
 [[ Visit the mayor, to collect bounties. | Mayor ]] 
 [[ Visit the church to see any announcements. | Notice. ]] 
@@ -653,5 +686,6 @@ colorID: 0
 position: 3879,904
 ---
 <<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
 You settle back with your family and live happily ever after.
 ===

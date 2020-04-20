@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 3019080744956303994, guid: c2111d6d7c69f4140bc68a3a57e90127,
+        type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019080744956303994, guid: c2111d6d7c69f4140bc68a3a57e90127,
+        type: 3}
+      propertyPath: evasion
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5997660436410804622, guid: c2111d6d7c69f4140bc68a3a57e90127,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,16 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019080744956303994, guid: c2111d6d7c69f4140bc68a3a57e90127,
-        type: 3}
-      propertyPath: damage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019080744956303994, guid: c2111d6d7c69f4140bc68a3a57e90127,
-        type: 3}
-      propertyPath: evasion
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2111d6d7c69f4140bc68a3a57e90127, type: 3}

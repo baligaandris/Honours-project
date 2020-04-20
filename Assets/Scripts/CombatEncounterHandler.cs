@@ -21,7 +21,7 @@ public class CombatEncounterHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RefreshUI();
+        player.GetComponent<RPGPlayer>().RefreshUI();
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class CombatEncounterHandler : MonoBehaviour
         int.TryParse(combatIndex, out encounterIndex);
         activeEnemy = Instantiate(encounters[encounterIndex].enemy);
         inCombat = true;
-        RefreshUI();
+        player.GetComponent<RPGPlayer>().RefreshUI();
     }
 
     public void TakeEnemyTurn() {
@@ -52,7 +52,7 @@ public class CombatEncounterHandler : MonoBehaviour
                 CombatRound();
             }
         }
-        RefreshUI();
+        player.GetComponent<RPGPlayer>().RefreshUI();
     }
 
     public void CombatRound() {
@@ -73,28 +73,28 @@ public class CombatEncounterHandler : MonoBehaviour
         int.TryParse(skipGold, out skipGoldInt);
         player.XP += skipXPInt;
         player.gold += skipGoldInt;
-        RefreshUI();
+        player.GetComponent<RPGPlayer>().RefreshUI();
     }
 
-    public void RefreshUI()
-    {
-        if (inCombat)
-        {
-            enemyHpText.text = activeEnemy.hp.ToString();
-            enemyNameText.text = activeEnemy.EnemyName.ToString();
-        }
-        else
-        {
-            enemyHpText.text = "";
-            enemyNameText.text = "";
-        }
-        hpText.text = player.hp.ToString();
-        xpText.text = player.XP.ToString();
-        goldText.text = player.gold.ToString();
-        damageText.text = player.damage.ToString();
-        defenceText.text = player.defense.ToString();
-        evasionText.text = player.evasion.ToString();
-    }
+    //public void RefreshUI()
+    //{
+    //    if (inCombat)
+    //    {
+    //        enemyHpText.text = activeEnemy.hp.ToString();
+    //        enemyNameText.text = activeEnemy.EnemyName.ToString();
+    //    }
+    //    else
+    //    {
+    //        enemyHpText.text = "";
+    //        enemyNameText.text = "";
+    //    }
+    //    hpText.text = player.hp.ToString();
+    //    xpText.text = player.XP.ToString();
+    //    goldText.text = player.gold.ToString();
+    //    damageText.text = player.damage.ToString();
+    //    defenceText.text = player.defense.ToString();
+    //    evasionText.text = player.evasion.ToString();
+    //}
 
 }
 [System.Serializable]

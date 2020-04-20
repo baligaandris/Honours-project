@@ -1,0 +1,818 @@
+title: Start
+tags: 
+colorID: 0
+position: 50,22
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 0>>
+<<SwapBackgroundAudio BackgroundAudio 3>>
+You have set up camp along the high road, on your way home after the Orc wars.
+You have a good view over your valley, but you still have a good way to go until you are home.
+
+Your childhood best friend Aila is busy setting up the tent, as you light the fire.
+You left together for the front lines to defend your home, and now that the peace treaty was signed, you return together.
+
+<<SwapNPC NPCImage 14>>
+"You know, things will probably be different than you remember. We have been gone for two years."
+->"I know."
+->"It will still be home"
+
+Aila smiles, and reaches into her rations pack, when something rustles beyond the firelight. A terrifying growling fills the air as you see multiple orange eyes glow in the dark.
+"Wolves" Aila whispers, as she slowly picks up her staff, readying for a fight.
+
+->Fight the wolves.
+<<CreateCombat CombatHandler 0>>
+<<ResolveCombat CombatHandler>>
+
+You are left exhausted and wounded but alive, as the last of the wolves flees your blade, and disappears into the night.
+You collapse next to the fire, and tend to each other's wounds. Eventually there isn't much left to do, but get to sleep. You keep you sword handy, just in case.
+
+[[ Sleep | BackOnTheRoad ]] 
+===
+title: BackOnTheRoad
+tags: 
+colorID: 0
+position: 51,287
+---
+<<SwapNPC NPCImage 11>>
+The next morning is greets you with a bright sun and clear skies. Though still sore from last night's battles, you pack up, and get back on the road.
+A few hours into your day's travels, merchant approaches, traveling the road in the other direction.
+<<SwapNPC NPCImage 12>>
+<<SwapBackground BackgroundImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
+"Hello there! Would you be interested in some of my wares?"
+
+"We could do with some healing potions if you have any." Aila speaks up.
+
+"Certainly, for a mere five gold pieces, it is yours!"
+
+"Oh, we have no money left, unfortunately." Aila answers, diminished.
+
+The merchant seems unarmed, and you outnumber him. You could easily make him give you the potion.
+[[ Rob him. | RobbingTheMerchant ]] 
+[[ Just move on. | MovingOn ]]
+===
+title: RobbingTheMerchant
+tags: 
+colorID: 0
+position: 47,539
+---
+You swiftly draw you sword and point it at him.
+
+"I think you will give it for free this time." You say.
+The merchant takes a half step back as his eyes widen, and he slowly raises his hands.
+
+"Oh, eh, certainly! I want no trouble. Here, and my pouch too." He stutters, clearly just wanting to get away.
+
+"How generous. Now get out of here." You point down the road, and he sets off at a remarkable pace down the road.
+
+You apply the potion to your injuries and then hand the bottle over to Aila.
+<<SpendMoney Player -5 10 0 0 0>>
+<<SwapNPC NPCImage 11>>
+She reluctantly takes it.
+"Was that necessary?" She asks, clearly upset at your actions.
+->"Our need was greater than his. He won't miss the potion, nor the coin."
+->"He was being selfish, for not giving us the potion."
+->"He is alive and well. No real damage was done."
+
+"I...suppose. Just warn me before you do anything like that again." She says.
+
+[[ Go on. | TheVillageEntry ]] 
+===
+title: MovingOn
+tags: 
+colorID: 0
+position: 310,546
+---
+"I can't give it to you for free unfortunately. I have to cover my costs, you see. Well, safe travels!"
+<<SwapNPC NPCImage 11>>
+As you walk on Aila speaks to you with a low voice.
+<<SwapNPC NPCImage 14>>
+"You know, we could have taken it from him, by force. We wouldn't need to go on with our injuries"
+->"We are soldiers! We can't go breaking the law!"
+->"It would have been wrong, to take what isn't ours."
+->"We will still recover. If we were dying that would have been different."
+
+"Yeah, you are right, I guess. I just wish this bite wouldn't hurt as much.
+
+[[ Arrive in the village | TheVillageEntry]] 
+===
+title: TheVillageEntry
+tags: 
+colorID: 0
+position: 979,6
+---
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+About five hours pass and you finally emerge from the woods. Bright sunlight hits you and you squint as a vista of your home town greets you. 
+You start riding down the side of the hill, descending among the buildings. You spot some familiar faces, but their expressions are dour and the mood is extremely low. 
+
+The streets seem to be home to many more beggars than when you left two years ago, and the cobblestones are slippery with mud and waste.
+
+There is a sudden explosion of movement in front of you, as the door of a general store slams open, and you see four guards exit, carrying crates and barrels full of food.
+
+A desperate sobbing cry sounds from inside the shop. "Please! You can't take that all! We'll go bankrupt!"
+<<SwapNPC NPCImage 6>>
+"Duke's orders. You are behind on tax. Out of the way, or you'll get lashes." grumbles the guard, and starts to load the supplies onto a cart.
+
+Aila leans over and whispers in your ear. "Might not want to draw attention to ourselves. Should we interfere?"
+[[ Interfere | OpposeGuards ]] 
+[[ Keep a low profile | LetTheGuardsDoTheirThing ]] 
+===
+title: OpposeGuards
+tags: 
+colorID: 0
+position: 996,256
+---
+You loudly clear you throat and ride forward, to tower over the guards as much as you can.
+"Stop!" you shout, and the crowd parts to let you through. "You can't treat these people like this."
+
+The leader of the guards eyes you and Aila spitefully. "Oh yeah? What are you gonna do about it."
+-> Try to make a deal
+    "You are gonna put them out of business. They can't pay taxes if they have no store, and I'm sure the Duke wouldn't be happy about that. Take half, and leave the rest."
+    The guard captain seems to consider for a second, then nods. "Fine. We take half." They load up roughly half of the supplies on the cart, and haul it away without another word.
+    <<SwapNPC NPCImage 11>>
+    "Thank you!" says the shopkeeper with teary eyes, and sets about collecting what is left of her wares.
+    <<SwapNPC NPCImage 14>>  
+    "It's good you intervened, though I would have loved to kick those guys in the ass. Let's go."
+-> Let your sword speak 
+    As answer you unsheathe your blade. The guards raise their spears readily.
+    <<CreateCombat CombatHandler 1>>
+    <<ResolveCombat CombatHandler>>
+    Though they give you a few more injuries, your combat skills are far superior and you get the better of them. Soon, you see them running down the street.
+    "The Duke will hear about this!" Yells one of them before disappearing through the watching crowd
+    <<SwapNPC NPCImage 11>>
+    "That was very kind of you, but what if they come back? I'm afraid this isn't over." says the shopkeeper with tears in her eyes, and sets about collecting her wares.   
+    <<SwapNPC NPCImage 14>>  
+    "That was crazy. Are you sure that was a good idea? I'm not sure we solved anything, and now we pissed off the Duke."
+    ->"Come what may, it was the just thing to do."
+    ->"They deserved a thrashing."
+    ->"You might be right. It would have been better to negotiate."
+    "Well, what's done is done. Let's go."
+
+You leave the crowd behind. Because your homes are in different parts of the town you wave Aila good bye, and you head towards your childhood home.
+<<SwapNPC NPCImage 11>>
+[[ Go home | HeadHome ]] 
+===
+title: LetTheGuardsDoTheirThing
+tags: 
+colorID: 0
+position: 1283,258
+---
+You keep your head down, and watch as the guards haul the goods away. You move on, leaving the watching crowd behind.
+<<SwapNPC NPCImage 14>>
+"That was awful to watch. Don't you think we should have done something?"
+->"They were acting according to the law."
+->"We would have only made things worse."
+->"Didn't want to piss off the guards."
+"Well, what's done is done. Let's just go home."
+<<SwapNPC NPCImage 11>>
+Because your homes are in different parts of the town you wave Aila good bye, and you head towards your childhood home.
+
+[[ Go home | HeadHome ]] 
+===
+title: HeadHome
+tags: 
+colorID: 0
+position: 995,546
+---
+<<SwapBackground BackgroundImage 10>>
+<<SwapNPC NPCImage 11>>
+You ride out to the fringes of the town, and approach your old home. When you left for the war two years ago, you left your old father and your sister Liessa at home. A few months into the war you received a letter from Liessa that your father passed away. 
+
+As you approach, you consider the house: though it has clearly seen better days, it seems like Liessa has kept up it in good condition. You knock on the door and as it opens Liessa's eye appears in the crack. When she spots you, the doors swings more widely open, and you see her lower a long staff that she was holding as bat, ready to hit someone.
+<<SwapNPC NPCImage 13>>
+"Ah you are back!" She hugs you happily "I'm so glad! Come in! Sorry for the staff, I get some funny folk out here sometimes."
+<<SwapBackground BackgroundImage 9>>
+<<SwapBackgroundAudio BackgroundAudio silence>>
+You sit down for a dinner and Liessa starts talking about how things have changed during the war.
+
+"The situation is still bad. Though the news of the peace treaty have been affixed the the church doors for a month now, the Duke hasn't released martial law yet."
+
+"They are still taxing us an arm and a leg. They say it's because there is still Orcs around. And of course there are the bandits, attacking anyone and everyone traveling to and from the Capital. They also say monsters have taken over the old graveyard in the forest, so people have to bury their dead in their gardens. While all these dangers are around no-one can argue that the war is truly over."
+
+While she talks she patches up your wounds the best she can. <<SpendMoney Player 0 10 0 0 0>> You share a lunch together, and as she keeps telling you about the hardships of the town, you come a decision. You must help the town return to a normal life. But you need some help with that.
+
+<<SwapBackground BackgroundImage 10>>
+As you head out once again you find someone is riding down the road towards you house.
+<<SwapNPC NPCImage 14>>
+"I knew you wouldn't be able to let it rest either. This place needs our help. Ready to go?"
+
+[[ "Yes, let's."| MissionHub ]] 
+===
+title: BanditsInvestigation
+tags: 
+colorID: 0
+position: 1356,852
+---
+<<set $doneBandits to true>> 
+<<SwapNPC NPCImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+"Good idea. I hear there is a large bounty on the bandits. You have to present their weapons as evidence they have been stopped."
+"Maybe we should simply ride up the road towards the Capital, be live bait."
+
+[[ "I don't see any better options." | BaitingBandits ]] 
+===
+title: MonstersInvestigation
+tags: 
+colorID: 0
+position: 2669,866
+---
+<<set $doneMonsters to true>>
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 7>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
+Your friend says he heard that the attacks happened in the forest near the cemetery, so you head in that direction.
+
+As you ride up the road, you hear a rustle from the underbrush.
+
+[[ Quickly ride on | NearCemetery ]]
+[[ Get off the horse and ready weapons |  ReadyToFight]] 
+[[ "Who's there? | CallOut ]] 
+===
+title: EnemyUnitInvestigation
+tags: 
+colorID: 0
+position: 3970,900
+---
+<<set $doneEnemy to true>> 
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+There are rumors that a miner saw Orcs, when he was investigating the veins in caves near the river.
+<<SwapNPC NPCImage 12>>
+You can question him, and he tells you she saw someone with green skin and tusks.
+
+[[ You head to the the caves | SteamCaves ]] 
+===
+title: TownGuardInvestigation
+tags: 
+colorID: 0
+position: 5263,909
+---
+<<set $doneGuards to true>> 
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+You go to the guards for an audience with the lord. 
+<<SwapBackground BackgroundImage 2>>
+<<SwapNPC NPCImage 6>>
+With your reputation and some chest-pounding you manage to get it.
+You negotiate with the lord to relinquish the iron grip he holds over the town, now that the dangers have been removed.
+
+[[ The end | End ]] 
+===
+title: Blacksmith
+tags: 
+colorID: 0
+position: 3100,1
+---
+<<SwapNPC NPCImage 1>>
+<<SwapBackground BackgroundImage 12>>
+<<SwapBackgroundAudio BackgroundAudio 15>>
+->Upgrade Weapon for 10 gold
+	<<SpendMoney Player 10 0 5 0 0>>
+	[[Blacksmith]]
+->Upgrade Armor for 10 gold
+	<<SpendMoney Player 10 0 0 0 5>>
+	[[Blacksmith]]
+->Back to town
+	[[TownServices]] 
+===
+title: Healer
+tags: 
+colorID: 0
+position: 3237,-247
+---
+<<SwapNPC NPCImage 0>>
+<<SwapBackground BackgroundImage 13>>
+<<SwapBackgroundAudio BackgroundAudio none>>
+->Get healed for 5 gold
+	<<SpendMoney Player 5 10 0 0 0>>
+	[[Healer]]
+->Back to town
+	[[TownServices]] 
+===
+title: BaitingBandits
+tags: 
+colorID: 0
+position: 1352,1276
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 6>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
+You and your Aila head out of town and start to ride down the Winding Road towards the Capital. The road is aptly named, with it twisting and turning through a forested mountain area.
+As you ride on, you hear a rustle of leaves behind you, and a group of rugged looking individuals, carrying bows, crossbows and swords step out behind you. Looking back in front,<<SwapNPC NPCImage 3>> you see that while you were distracted another group jumped out to flank you. One of them steps a bit forward.
+
+"No one move. The toll is five gold pieces. Hand it over, and no-one will get hurt. Refuse and you'll be sent back the way you came with a nasty bruise. Get feisty, and we'll turn you into a pincushion. Am I understood?"
+
+Looking around, you notice one of the bandits in front of you is looking at you rather intensely. As your eyes meet, a shock of recognition runs through you. It's Sil, you used to play together when you were little.
+
+It is a difficult situation. The bandits outnumber you, but you have gotten out of worse spots in the war. And then there is Sil...
+[[ Fight them | FightBandits ]]
+[[ Talk to Gref | TalkToBanditFriend ]] 
+[[ Tell them off | PreachAtBandits ]] 
+===
+title: FightBandits
+tags: 
+colorID: 0
+position: 415,1421
+---
+<<SwapNPC NPCImage 11>>
+<<CreateCombat CombatHandler 2>>
+<<ResolveCombat CombatHandler>>
+One fast movement is all it takes, and everyone springs into violent action.
+Arrows flying everywhere, it is a difficult fight, but your military-grade armor serves you well. A few minutes of brutal struggle later, and you stand bloodied, but victorious. Looking around all the dead bodies, it makes you wonder if you did the right thing.
+
+As you collect their weapons for proof, Aila voices similar concerns.
+"Are you sure this was the right thing to do? Such death, and for what? Some coin taken?"
+
+[[ "You are right, I regret my decision now." | IfYouSaySo ]]
+[[ "I had to protect the innocents they keep attacking." | IfYouSaySo ]]
+[[ "The law must be upheld." | IfYouSaySo ]] 
+[[ "It gets us a payday." | IfYouSaySo ]] 
+===
+title: TalkToBanditFriend
+tags: 
+colorID: 0
+position: 1763,1525
+---
+<<SwapNPC NPCImage 2>>
+"Is that you, Sil?" you ask, focusing on your childhood friend.
+"Hello. I hoped you wouldn't recognise me" She says, as she pulls off her mask. A an awkward silence stretches between you.
+
+->"So, are you gonna rob me now?"
+    She looks around at the other bandits.
+    "I'm not exactly in charge here. Listen, if you just pay up, you won't get hurt. We need the money to get by. This isn't exactly our first choice of job either."
+->"How did you end up like this?"
+    "You know how it is. War starts, prices go up, taxes go up, if you can't keep up you get left behind. We are the ones who were left to fend for ourselves."
+->"You have to stop this."
+    "And do what? Starve? No, thank you. Pay the toll, or pay the price."
+->"I want to help you."
+    "Help me? You can help by paying the toll."
+    "No" You answer "I mean more long term." 
+    [[ NewLifeProposal ]] 
+
+
+[[ "What you are doing is wrong, no matter the circumstances" | NoExcuses ]]
+[[ "Have you thought of starting a new life?" | NewLifeProposal ]]
+[[ "I have to put an end to this." (fight) | FightBandits ]] 
+===
+title: PreachAtBandits
+tags: 
+colorID: 0
+position: 1334,1619
+---
+<<SwapNPC NPCImage 3>>
+You raise your voice addressing the whole group.
+"It isn't too late! You can still turn back from this path! You can find an honest job and live a peaceful life!"
+One of the bandits speaks up, with a deep raspy voice.
+
+"It's easy for you to speak from your horse, wearing the uniform of the royal army! You will get military pension! We have nothing! We lost our businesses, our homes, everything to the war! We can't afford to start a legitimate business, and people aren't hiring in these uncertain times. Just what are we supposed to do?"
+
+You consider his words for a moment, thinking over your options.
+
+[[ "I have to put an end to this." (fight) | FightBandits]]
+[[ "I can help you." | NewLifeProposal]]
+[[ "What you are doing is wrong, no matter the circumstances." | NoExcuses ]] 
+[[ "I have no right to judge you." | LeavingTheBanditsAlone ]]
+===
+title: IfYouSaySo
+tags: 
+colorID: 0
+position: 967,2650
+---
+<<SwapNPC NPCImage 14>>
+Aila sighs resignedly. "These are difficult days, no matter what you do."
+"We should get back to town."
+[[ Back to the town | MissionHub ]] 
+===
+title: MissionHub
+tags: 
+colorID: 0
+position: 1917,17
+---
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+"Where do you want to go? As I hear, there are multiple problems that need resolving before things can go back to normal."
+
+<< if $doneBandits != true>> 
+[[ Investigate the issue of the Bandits | BanditsInvestigation ]] 
+<< endif>> 
+<< if $doneMonsters != true>> 
+[[ Investigate the issue of the Monsters | MonstersInvestigation ]] 
+<< endif>> 
+<< if $doneEnemy != true>> 
+[[ Investigate the issue of the Orcs | EnemyUnitInvestigation ]]
+<< endif>> 
+<< if $doneBandits == true and $doneEnemy == true and $doneBandits == true>> 
+[[ Investigate the issue of the Town guards | TownGuardInvestigation]] 
+<< endif>> 
+[[ Visit other parts of the town. | TownServices ]] 
+===
+title: NewLifeProposal
+tags: 
+colorID: 0
+position: 985,1963
+---
+<<SwapNPC NPCImage 3>>
+You get a sudden new idea.
+"You can start a new life. Leave this town, go the Capital or elsewhere. I can get you money: there is a price on your heads, and all I need to collect it is your weapons. If you hand them over, I can collect the bounty and bring it to you. It should be enough to get you through the hardest part."
+
+There is a stir of conversation. Your proposal seems to start a back-and-forth discussion. Some are sceptical, others are suspicious. Sil speaks up, and testifies that you are a trustworthy person. Slowly they agree: They will trust you to help them. 
+
+They collect their weapons and put them in a large leather sack you affix to your horse.
+
+"I'll be back, soon." You promise them, and take off towards the town.
+
+[[ BountyForTheHunted ]]
+===
+title: NoExcuses
+tags: 
+colorID: 0
+position: 1000,1685
+---
+<<SwapNPC NPCImage 3>>
+"I understand you are going through hard times, but that is no excuse for hurting others." You say.
+"So what are you gonna do about it?" shouts one of the bandits.
+
+[[ "I have no other option." (fight)| FightBandits ]] 
+[[ "I still don"t have the right to punish you." | LeavingTheBanditsAlone ]] 
+[[ "Everyone deserves a second chance. I can help. | NewLifeProposal ]] 
+===
+title: BountyForTheHunted
+tags: 
+colorID: 0
+position: 996,2256
+---
+<<SwapNPC NPCImage 11>>
+Your ride back to town is a slow one, burdened by dozens of bows and other weapons.
+<<SwapBackgroundAudio BackgroundAudio 13>>
+<<SwapBackground BackgroundImage 14>>
+Arriving in town, you search for a guard captain.
+<<SwapNPC NPCImage 6>>
+"What is it, citizen?" He asks as you ride up the garrison.
+"We have dealt with the bandit threat" you say as Aila lowers the bundle of weapons to the ground.
+"That's some feat! They must have been a formidable enemy. Here, take your well-earned reward!"
+The guard hands over a large sack of gold. You put it away, not adding it to your personal coin-pouch.
+<<SwapNPC NPCImage 14>>
+You ride back to the forest quickly, as you know the ex-bandits are eager for your return.
+<<SwapBackgroundAudio BackgroundAudio 9>>
+<<SwapBackground BackgroundImage 6>>
+<<SwapNPC NPCImage 3>>
+"He's back!" You hear Sil's voice call out.
+The group gathers around you as you hop off your horse and present them with the sack.
+"There is enough here to really start over! Makes you think, doesn't it? The Duke would rather pay to have us killed than help us out! Well, you showed him! Thank you!" 
+
+As the The group of ex-bandits gathers their things and they soon set off down the road. Sil waves you good bye one more time before the forest swallows them. You turn back towards the town.
+<<SwapNPC NPCImage 14>>
+"So, you think we did the right thing? We broke the law, and all we have is their word that they will go straight. What if they go back to crime?"
+[[ "Sil is my friend, I needed to help her." | IfYouSaySo ]] 
+[[ "They are good people who got stuck in a bad situation." | IfYouSaySo ]]
+[[ "The real crime is that they were put into this situation" | IfYouSaySo ]] 
+===
+title: LeavingTheBanditsAlone
+tags: 
+colorID: 0
+position: 1534,2067
+---
+<<SwapNPC NPCImage 3>>
+"I... can't judge you for doing what you have to in order to survive. If you will allow me, I will leave you to do what you will." The bandits keep their weapons raised, but don't attack as you turn your horse around and begin the long ride back towards the town.
+<<SwapNPC NPCImage 11>>
+A few minutes later when you know the bandits are out of earshot, Aila speaks up.
+<<SwapNPC NPCImage 14>>
+"Should we not have done something? Won't we be complicit in their future crimes, because we let them go? They were very keen to blame their actions on their circumstances, but does a difficult life excuse their actions?"
+
+[[ "We all do what we have to in order to survive, like in the war." | IfYouSaySo ]]
+[[ "They aren't a danger to me, I don't need to hurt them" | IfYouSaySo ]]
+[[ "I have also done bad things in the war, I don't have the moral position to judge them."| IfYouSaySo ]] 
+===
+title: TownServices
+tags: 
+colorID: 0
+position: 2604,-320
+---
+<<SwapBackground BackgroundImage 14>>
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+[[ Visit the blacksmith | Blacksmith ]] 
+[[ Visit the healer | Healer ]]
+[[ Visit Town hall. | TownHall ]] 
+[[ Back to town center | MissionHub ]] 
+===
+title: NearCemetery
+tags: 
+colorID: 0
+position: 2728,2599
+---
+<<SwapBackground BackgroundImage 8>>
+<<SwapNPC NPCImage 9>>
+<<SwapBackgroundAudio BackgroundAudio 6>>
+Zombies are crawling all over the cemetery. You must slay them.
+<<CreateCombat CombatHandler 5>>
+<<ResolveCombat CombatHandler>>
+You fight the zombies, put them in a pile and burn the bodies.
+
+[[ Ride back to town. | MissionHub ]] 
+===
+title: ReadyToFight
+tags: 
+colorID: 0
+position: 2444,1395
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 5>>
+You ready your weapon, and hop off your horse. You approach the brush slowly expecting the monster to jump out. You signal to your partner to go flank from the other side. On a silent count to three you both charge to surprise the skulker.
+<<SwapNPC NPCImage 4>>
+<<SwapBackgroundAudio BackgroundAudio 9>>
+You manage to pin down the man, who turns out to be a deserter.
+
+[[ Turn him in | TurnIn]]
+[[ Let him go | LetGo ]]
+[[ Kill him | KillDeserter ]] 
+===
+title: CallOut
+tags: 
+colorID: 0
+position: 2908,1342
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 5>>
+"Whoever lingers there, show yourself"
+<<SwapBackgroundAudio BackgroundAudio 9>>
+A man with a raised sword inches out from behind a tree. He is a deserter.
+<<SwapNPC NPCImage 4>>
+
+[[ Fight him | FightDeserter ]]
+[[ Let him go | LetGo ]]
+[[ Tell him you will turn him in | TurnInThreat ]]
+===
+title: TurnIn
+tags: 
+colorID: 0
+position: 2518,1995
+---
+<<SwapNPC NPCImage 4>>
+Despite his protests, you bind him,
+<<SwapNPC NPCImage 6>>
+<<SwapBackground BackgroundImage 14>>
+and return him to the town to be arrested.
+<<SwapBackground BackgroundImage 7>>
+<<SwapNPC NPCImage 11>>
+Your friend says it couldn't have been the deserter who is responsible for the monster attacks, you should still check the forest.
+
+So you ride back to the forest.
+<<SwapNPC NPCImage 14>>
+Your friend asks you to justify your decision.
+
+[[ Justification | WhateverYouSay2 ]] 
+===
+title: LetGo
+tags: 
+colorID: 0
+position: 2869,2017
+---
+<<SwapNPC NPCImage 4>>
+He is grateful, and he disappears into the forest.
+<<SwapNPC NPCImage 14>>
+Your friend asks you to justify your decision.
+
+[[ Justification | WhateverYouSay2 ]] 
+===
+title: KillDeserter
+tags: 
+colorID: 0
+position: 2231,2030
+---
+<<SwapNPC NPCImage 4>>
+You slice his throat and dump is body.
+
+<<SwapNPC NPCImage 14>>
+Your friend challenges your decision:
+Was his crime severe enough to kill him? Did he truly deserve it? Even if he did, is it up to you to decide this? Why did you do it?
+
+[[ He let his fellow soldiers die, he was a coward. | WhateverYouSay2 ]] 
+[[ He would have been a danger to the town | WhateverYouSay2 ]]
+===
+title: FightDeserter
+tags: 
+colorID: 0
+position: 3265,2004
+---
+<<SwapNPC NPCImage 4>>
+He lies at your feet, defeated, breathing heavy.
+
+[[ Turn him in | TurnIn ]]
+[[ Kill him | KillDeserter ]] 
+[[ Let him go | LetGo ]] 
+===
+title: TurnInThreat
+tags: 
+colorID: 0
+position: 3262,1583
+---
+<<SwapNPC NPCImage 4>>
+He attacks you
+<<CreateCombat CombatHandler 3>>
+<<ResolveCombat CombatHandler>>
+
+[[ Fight | FightDeserter ]] 
+===
+title: WhateverYouSay2
+tags: 
+colorID: 0
+position: 2355,2402
+---
+<<SwapNPC NPCImage 14>>
+Your friend half-heartedly accepts your reason.
+
+[[ Arrive near the cemetery | NearCemetery ]] 
+===
+title: SteamCaves
+tags: 
+colorID: 0
+position: 4005,1353
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 3>>
+<<SwapBackgroundAudio BackgroundAudio 14>>
+The cave has thermal water-pools in it, and so the mouth of it is usually releasing copious amounts of steam. The inside is hot, and your vision is limited by the steam in the air.
+
+As you wander in, you see hulking shapes emerge from the mist. Armed and armored orcs, wielding heavy axes and hammers.
+
+They seem wary of you, and one of the biggest ones speaks up:
+<<SwapNPC NPCImage 8>>
+"We have no quarrel with you, human, but we can't allow you to bring your armies down upon us. You must die."
+
+[[ So be it! | FightOrcs ]]
+[[ I'm sure we can find another way. | Negotiation ]]
+[[ You will have to catch me first | Run ]]
+===
+title: FightOrcs
+tags: 
+colorID: 0
+position: 3621,1851
+---
+<<SwapNPC NPCImage 8>>
+You fight them.
+<<CreateCombat CombatHandler 4>>
+<<ResolveCombat CombatHandler>>
+<<SwapNPC NPCImage 14>>
+Your friend questions your decision.
+The war is over, should we not have tried to negotiate? 
+They let the miner go, maybe they could have been reasoned with!
+After all, our countries are in peace now.
+
+[[ Their kind killed many of my friends on the front lines. | Sure ]]
+[[ We couldn't risk it. They were too close to the town. | Sure ]]
+[[ They said we had to die. It was self-defense. | Sure ]]
+===
+title: Negotiation
+tags: 
+colorID: 0
+position: 4032,1639
+---
+<<SwapNPC NPCImage 8>>
+"woah, woah, woah! Let's not get ahead of ourselves. We aren't here to fight you, or to bring armies down upon you. The war is over."
+
+The orcs didn't know the war has ended, they have been separated from their unit, and had no line of communication to their leaders. They require proof. There is an official notice posted on the door of the church in town. You can go get it.
+
+[[ Get the notice | GetTheNotice ]]
+[[ Get the guards | GetTheGuards]] 
+===
+title: Run
+tags: 
+colorID: 0
+position: 4487,1635
+---
+<<SwapNPC NPCImage 11>>
+You hightail it towards the door, dodging between swinging weapons, and disappearing through the mist. You get to the cave's mouth and dashing out into the open air. You hop on your horses and ride off towards the village. You have several bleeding wounds.
+
+<<SwapBackground BackgroundImage 14>>
+You arrive back in town, with only one idea, of what to do.
+
+[[ Report them to the guards. | GetTheGuards ]] 
+===
+title: Sure
+tags: 
+colorID: 0
+position: 3739,2585
+---
+<<SwapNPC NPCImage 14>>
+Your friend half-heartedly accepts your reasoning.
+===
+title: GetTheNotice
+tags: 
+colorID: 0
+position: 3947,1934
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackground BackgroundImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+You take a trip back to the town, collect the notice of the door, 
+<<SwapBackground BackgroundImage 4>>
+and deliver it to the Orcs. 
+<<SwapNPC NPCImage 8>>
+<<SwapBackground BackgroundImage 3>>
+<<SwapBackgroundAudio BackgroundAudio 14>>
+They realize they can return home, and do so.
+<<SwapNPC NPCImage 14>>
+Your friend questions your decision.
+Should we not have killed them? They have probably killed many of our countrymen, and would have done the same to us without thinking. Don't we owe this to our fallen, and our nation to hunt down our enemies?
+
+[[ They were no longer our enemies | Sure ]] 
+[[ It wasn't our war, but our leaders'. The common soldiers are just tools. | Sure ]]
+[[ They let the kid go. Clearly they weren't bloodthirsty. | Sure ]] 
+===
+title: GetTheGuards
+tags: 
+colorID: 0
+position: 4226,1936
+---
+<<SwapBackground BackgroundImage 14>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+<<SwapNPC NPCImage 6>>
+You let the guards know that you found an enemy unit nearby.
+You hear the head of the guard dispatches a unit to deal with them. It seems like they want to kill them. 
+<<SwapNPC NPCImage 14>>
+Your friend whispers to you that under the treaty, they should just be shipped back to their home country.
+
+[[ Stand up to the guard, and tell them that they mustn't kill the orcs. | GuardsDeportOrcs ]] 
+[[ Let them do what they want. | GuardsKillOrcs ]]
+===
+title: GuardsDeportOrcs
+tags: 
+colorID: 0
+position: 4112,2240
+---
+<<SwapNPC NPCImage 11>>
+Soon, you see the orcs in chains being lead into town, loaded onto carriges, and taken away. The guard captain confirms they are prisoners of war, and will be taken to border to be released into their country.
+<<SwapNPC NPCImage 6>>
+You are rewarded for your service, but are given less because you interfered.
+<<SkipCombat CombatHandler 5 10>>
+<<SwapNPC NPCImage 14>>
+Your friend questions your decision. Should we not have killed them? They have probably killed many of our countrymen, and would have done the same to us without thinking.
+Or maybe we should have just let them go? What was the point of getting them captured? They could have gone home on their own.
+
+[[ This was the safest option. No-one got hurt. | Sure ]]
+[[ We can't trust them, but bloodshed was not necessary.| Sure ]] 
+[[ We followed the laws set by the peace treaty, which is the most important. | Sure ]] 
+===
+title: GuardsKillOrcs
+tags: 
+colorID: 0
+position: 4381,2237
+---
+<<SwapNPC NPCImage 11>>
+The guards return bloodied a few hours later. They have undoubtedly killed the orcs. Some of them sport bad injuries, and they have two dead with them.
+<<SwapNPC NPCImage 6>>
+You are rewarded for your service. You get a pat on the shoulder for being a true patriot.
+<<SkipCombat CombatHandler 10 10>>
+<<SwapNPC NPCImage 14>>
+Your friends question your decision:
+Was this necessary? Could this have been resolved without anyone getting hurt? We broke the law set up by the peace treaty! 
+
+[[ The guards did it, not us, it is not our responsibility. | Sure ]] 
+[[ They were a treat and had to be removed. | Sure ]] 
+[[ Their kind killed a lot of our friends, they had it coming. | Sure ]] 
+===
+title: Mayor
+tags: 
+colorID: 0
+position: 3159,-491
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 4>>
+[[ Back to Town Hall. | TownHall ]] 
+===
+title: Notice.
+tags: 
+colorID: 0
+position: 3126,-769
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+Multiple copies of the same notice are on the board. They detail the peace treaty and the terms of it.
+[[ Back to Town Hall | TownHall ]] 
+===
+title: TownHall
+tags: 
+colorID: 0
+position: 2677,-625
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+[[ Back to rest of the town | TownServices ]] 
+[[ Visit the mayor, to collect bounties. | Mayor ]] 
+[[ Visit the church to see any announcements. | Notice. ]] 
+===
+title: End
+tags: 
+colorID: 0
+position: 5291,1246
+---
+<<SwapNPC NPCImage 11>>
+<<SwapBackgroundAudio BackgroundAudio 13>>
+You settle back with your family and live happily ever after.
+===

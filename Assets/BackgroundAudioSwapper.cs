@@ -21,9 +21,18 @@ public class BackgroundAudioSwapper : MonoBehaviour
     [YarnCommand("SwapBackgroundAudio")]
     public void SwapBackgroundSound(string backgroundSoundIndex)
     {
-        int index;
-        int.TryParse(backgroundSoundIndex, out index);
-        GetComponent<AudioSource>().clip = backgroundSounds[index];
-        GetComponent<AudioSource>().Play();
+        if (backgroundSoundIndex == "silence")
+        {
+            GetComponent<AudioSource>().Stop();
+            Debug.Log("silencing");
+        }
+        else
+        {
+            int index;
+            int.TryParse(backgroundSoundIndex, out index);
+            GetComponent<AudioSource>().clip = backgroundSounds[index];
+            GetComponent<AudioSource>().Play();
+        }
+
     }
 }
